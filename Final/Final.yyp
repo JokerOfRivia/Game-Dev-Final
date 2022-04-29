@@ -1,8 +1,10 @@
 {
   "resources": [
+    {"id":{"name":"spr_debug_green","path":"sprites/spr_debug_green/spr_debug_green.yy",},"order":1,},
     {"id":{"name":"scr_utilities","path":"scripts/scr_utilities/scr_utilities.yy",},"order":1,},
     {"id":{"name":"fnt_pixelarribig","path":"fonts/fnt_pixelarribig/fnt_pixelarribig.yy",},"order":1,},
     {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},"order":0,},
+    {"id":{"name":"spr_debug_red","path":"sprites/spr_debug_red/spr_debug_red.yy",},"order":0,},
     {"id":{"name":"obj_virtual_controller","path":"objects/obj_virtual_controller/obj_virtual_controller.yy",},"order":2,},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},"order":1,},
     {"id":{"name":"scr_statemachine","path":"scripts/scr_statemachine/scr_statemachine.yy",},"order":0,},

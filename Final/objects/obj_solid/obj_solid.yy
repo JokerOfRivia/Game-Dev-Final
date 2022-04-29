@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "",
-    "path": "",
+    "name": "spr_debug_red",
+    "path": "sprites/spr_debug_red/spr_debug_red.yy",
   },
   "solid": false,
   "visible": false,
