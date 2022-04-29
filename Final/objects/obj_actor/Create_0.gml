@@ -16,13 +16,21 @@
 	change upon collision. It's pretty handy!
 */
 function collideCheck(x_check, y_check){
-	if place_meeting(x_check, y_check, obj_solid){
-		return true;
+	var solid_check = instance_place(x_check, y_check, obj_solid);
+	if (solid_check==-4 or solid_check.collidable==false) {
+		return false;
 	}
+	else return place_meeting(x_check, y_check, solid_check);
 }
+
 facing_x = 0;
 facing_y = 0;
+
 function default_move_action(){};
+function squish_move_action(){
+	//moving solids will call this if they trap an actor out of bounds
+}
+
 function move_x(x_dis, action){
 	var remainder = x_dis;
 	var move = round(remainder);

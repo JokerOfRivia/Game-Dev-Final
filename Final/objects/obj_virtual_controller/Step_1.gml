@@ -50,10 +50,6 @@ else {
 	input_normal_y = 0;
 }
 
-show_debug_message("magnitude = " + string(mag))
-show_debug_message("rawx " + string(input_raw_x))
-show_debug_message("normalx " + string(input_normal_x))
-
 //keep the last direction inputted
 if (input_up_pressed) {facing_x = 0; facing_y = -1;}
 if (input_down_pressed) {facing_x = 0; facing_y = 1;}

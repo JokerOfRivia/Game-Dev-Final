@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_debug_red",
-    "path": "sprites/spr_debug_red/spr_debug_red.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "spriteMaskId": null,
@@ -27,11 +24,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parent Objects",
-    "path": "folders/Objects/Essential/Parent Objects.yy",
+    "name": "Essential",
+    "path": "folders/Objects/Essential.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_solid",
+  "name": "obj_actor_tracker",
   "tags": [],
   "resourceType": "GMObject",
 }
