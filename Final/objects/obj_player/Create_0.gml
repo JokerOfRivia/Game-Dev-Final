@@ -30,7 +30,7 @@ function cancel_velocity_y(){
 #region //states
 	//0
 	function state_move(){
-		var input_x = controller.input_right - controller.input_left;
+		var input_x = controller.input_raw_x;
 		
 		velocity_x = clamp(velocity_x+input_x, -velocity_max, velocity_max);
 		
