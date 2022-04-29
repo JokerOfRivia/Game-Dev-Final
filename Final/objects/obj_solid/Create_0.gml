@@ -19,7 +19,6 @@ if(!instance_exists(obj_actor_tracker)) {
 	instance_create_layer(x, y, layer, obj_actor_tracker);
 }
 
-riding = ds_list_create();
 collidable = true;
 
 function move(x_dis, y_dis){
@@ -43,7 +42,7 @@ function move(x_dis, y_dis){
 					//push right
 					actor.move_x(bbox_right - actor.bbox_left, actor.squish_move_action);
 				}
-				else if (ds_list_contains(riding, actor)) {
+				else if (actor.is_riding(id)) {
 					//carry
 					actor.move_x(x_move, actor.default_move_action);					
 				}
@@ -58,7 +57,7 @@ function move(x_dis, y_dis){
 					//push right
 					actor.move_x(bbox_left - actor.bbox_right, actor.squish_move_action);
 				}
-				else if (ds_list_contains(riding, actor)) {
+				else if (actor.is_riding(id)) {
 					//carry
 					actor.move_x(x_move, actor.default_move_action);					
 				}
@@ -77,7 +76,7 @@ function move(x_dis, y_dis){
 					//push down
 					actor.move_y(bbox_bottom - actor.bbox_top, actor.squish_move_action);
 				}
-				else if (ds_list_contains(riding, actor)) {
+				else if (actor.is_riding(id)) {
 					//carry
 					actor.move_y(y_move, actor.default_move_action);					
 				}
@@ -92,7 +91,7 @@ function move(x_dis, y_dis){
 					//push up
 					actor.move_y(bbox_top - actor.bbox_bottom, actor.squish_move_action);
 				}
-				else if (ds_list_contains(riding, actor)) {
+				else if (actor.is_riding(id)) {
 					//carry
 					actor.move_y(x_move, actor.default_move_action);					
 				}

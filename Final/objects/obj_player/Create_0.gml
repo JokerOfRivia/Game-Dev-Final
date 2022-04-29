@@ -4,6 +4,14 @@
 	PLEASE REFER TO obj_actor, obj_solid, AND scr_statemachine TO UNDERSTAND!!
 */
 event_inherited();
+
+is_riding = function(solid_id){
+	if (place_meeting(x, y+1, solid_id)){
+		return true;
+	}
+	else return false;
+}
+
 controller = obj_virtual_controller;
 
 #region //gameplay vals

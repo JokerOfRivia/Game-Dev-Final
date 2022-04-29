@@ -22,6 +22,10 @@ function collideCheck(x_check, y_check){
 	}
 	else return place_meeting(x_check, y_check, solid_check);
 }
+//override in child objects if they have some certain condition for riding a solid
+is_riding = function(){
+	return false;
+}
 
 facing_x = 0;
 facing_y = 0;
