@@ -39,18 +39,18 @@ input_c_released =			keyboard_check_released(c);
 input_raw_x = input_right - input_left;
 input_raw_y = input_down - input_up;
 
-var magnitude = sqrt((input_raw_x*input_raw_x) + (input_raw_y*input_raw_y));
+var mag = magnitude(input_raw_x, input_raw_y);
 
-if (magnitude!=0) {
-	input_normal_x = input_raw_x/magnitude;
-	input_normal_y = input_raw_y/magnitude;
+if (mag!=0) {
+	input_normal_x = input_raw_x/mag;
+	input_normal_y = input_raw_y/mag;
 }
 else {
 	input_normal_x = 0;
 	input_normal_y = 0;
 }
 
-show_debug_message("magnitude = " + string(magnitude))
+show_debug_message("magnitude = " + string(mag))
 show_debug_message("rawx " + string(input_raw_x))
 show_debug_message("normalx " + string(input_normal_x))
 

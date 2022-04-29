@@ -1,3 +1,9 @@
+function pythagoras(val1, val2){
+	sqrt((val1) + (val2));
+}
+function magnitude(x_length, y_length){
+	pythagoras(x_length*x_length, y_length*y_length);
+}
 function wrap(val, min, max){
 	return val - (max - min) * floor( val / (max - min));
 }
