@@ -14,11 +14,6 @@ if (debug_mode) {
 //HEY KATE IF YOURE READING THIS!!
 //THIS IS HEAVILY BASED ON THE SYSTEM MADDIE THORSON USED IN CELESTE/TOWERFALL!
 //REFER TO THIS FOR CREDIT! https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5
-
-if(!instance_exists(obj_actor_tracker)) {
-	instance_create_layer(x, y, layer, obj_actor_tracker);
-}
-
 collidable = true;
 
 function move(x_dis, y_dis){

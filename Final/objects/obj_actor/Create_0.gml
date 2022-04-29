@@ -15,6 +15,11 @@
 	explosion. You can even combine this feature with the State Machine, calling a state
 	change upon collision. It's pretty handy!
 */
+if(!instance_exists(obj_actor_tracker)) {
+	instance_create_layer(x, y, layer, obj_actor_tracker);
+}
+ds_list_add(obj_actor_tracker.actor_list, id);
+
 function collideCheck(x_check, y_check){
 	var solid_check = instance_place(x_check, y_check, obj_solid);
 	if (solid_check==-4 or solid_check.collidable==false) {
