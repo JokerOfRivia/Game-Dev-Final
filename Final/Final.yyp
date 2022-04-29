@@ -1,5 +1,14 @@
 {
   "resources": [
+    {"id":{"name":"scr_utilities","path":"scripts/scr_utilities/scr_utilities.yy",},"order":1,},
+    {"id":{"name":"fnt_pixelarribig","path":"fonts/fnt_pixelarribig/fnt_pixelarribig.yy",},"order":1,},
+    {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},"order":0,},
+    {"id":{"name":"obj_virtual_controller","path":"objects/obj_virtual_controller/obj_virtual_controller.yy",},"order":2,},
+    {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},"order":1,},
+    {"id":{"name":"scr_statemachine","path":"scripts/scr_statemachine/scr_statemachine.yy",},"order":0,},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":3,},
+    {"id":{"name":"fnt_pixelarri","path":"fonts/fnt_pixelarri/fnt_pixelarri.yy",},"order":0,},
+    {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -14,9 +23,8 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"Windows UWP","path":"options/windowsuap/options_windowsuap.yy",},
   ],
-  "isDnDProject": false,
+  "defaultScriptType": 1,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -39,18 +47,20 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Essential/Parent Objects.yy","order":0,"resourceVersion":"1.0","name":"Parent Objects","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Essential.yy","order":2,"resourceVersion":"1.0","name":"Essential","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.5.589",
+    "IDEVersion": "2022.3.0.625",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.5",
   "name": "Final",
   "tags": [],
   "resourceType": "GMProject",
