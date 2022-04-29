@@ -14,6 +14,10 @@
 	Also, for our convenience, we track the normalized input directions as well as the last
 	direction input by the player (as "facing").
 */
+if (debug_mode) {
+	show_debug_overlay(true);	
+}
+
 
 //designate default controls
 #macro UP_DEFAULT				ord("W");
