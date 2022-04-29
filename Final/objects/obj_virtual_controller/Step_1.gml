@@ -35,13 +35,13 @@ input_c_released =			keyboard_check_released(c);
 
 #endregion
 
-//get the normalized versions of the directional inputs
-var x_axis = input_right - input_left;
-var y_axis = input_down - input_up;
-var magnitude = sqrt((x_axis*x_axis)+(y_axis*y_axis));
+//get the directional inputs
+input_raw_x = input_right - input_left;
+input_raw_y = input_down - input_up;
+var magnitude = sqrt((input_raw_x*input_raw_x) + (input_raw_y*input_raw_y));
 
-input_normal_x = x_axis/magnitude;
-input_normal_y = y_axis/magnitude;
+input_normal_x = input_raw_x/magnitude;
+input_normal_y = input_raw_y/magnitude;
 
 //keep the last direction inputted
 if (input_up_pressed) {facing_x = 0; facing_y = -1;}

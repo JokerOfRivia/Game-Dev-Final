@@ -35,7 +35,10 @@ a =								A_DEFAULT;
 b =								B_DEFAULT;
 c =								C_DEFAULT;
 
-//track normalized input direction and last direction input
+//track input direction and last direction input
+input_rax_x = 0;
+input_raw_y = 0;
+
 input_normal_x = 0;
 input_normal_y = 0;
 
