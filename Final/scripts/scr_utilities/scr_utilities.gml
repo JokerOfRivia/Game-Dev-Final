@@ -1,16 +1,24 @@
 function pythagoras(val1, val2){
-	sqrt((val1) + (val2));
+	return sqrt((val1) + (val2));
 }
+
 function magnitude(x_length, y_length){
-	pythagoras(x_length*x_length, y_length*y_length);
+	return pythagoras(x_length*x_length, y_length*y_length);
 }
+
 function wrap(val, min, max){
 	return val - (max - min) * floor( val / (max - min));
 }
+
+function ds_list_contains(id, value){
+	return ds_list_find_index(id, value)!=-1 ? false: true;
+}
+
 function ds_list_transfer(source, id, value){
 	ds_list_add(id, value);
 	ds_list_delete(source, value);
 }
+
 function ds_stack_shuffle(id){
 	var list = ds_list_create();
 	var size = ds_stack_size(id);
