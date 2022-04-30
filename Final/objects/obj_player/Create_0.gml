@@ -24,7 +24,8 @@ velocity_x = 0;
 velocity_y = 0;
 velocity_max = 20;
 
-drag = 0.1;
+move_speed = 2;
+drag = 0.3;
 grav = 5;
 #endregion
 
@@ -38,7 +39,7 @@ function cancel_velocity_y(){
 #region //states
 	//0
 	function state_move(){
-		var input_x = controller.input_normal_x;
+		var input_x = move_speed * controller.input_normal_x;
 		
 		velocity_x = clamp(velocity_x+input_x, -velocity_max, velocity_max);
 		
