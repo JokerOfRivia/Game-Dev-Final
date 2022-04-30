@@ -20,7 +20,7 @@ if(!instance_exists(obj_actor_tracker)) {
 }
 ds_list_add(obj_actor_tracker.actor_list, id);
 
-function collideCheck(x_check, y_check){
+function collide_check(x_check, y_check){
 	var solid_check = instance_place(x_check, y_check, obj_solid);
 	if (solid_check==-4 or solid_check.collidable==false) {
 		return false;
@@ -52,7 +52,7 @@ function move_x(x_dis, action){
 	facing_x = dir;
 
 	while (move != 0){
-		if(!collideCheck(x+dir,y)){
+		if(!collide_check(x+dir,y)){
 			x+=dir;
 			move-=dir;
 		}
@@ -70,7 +70,7 @@ function move_y(y_dis, action){
 	facing_y = dir;
 
 	while (move != 0){
-		if(!collideCheck(x,y+dir)){
+		if(!collide_check(x,y+dir)){
 			y+=dir;
 			move-=dir;
 		}

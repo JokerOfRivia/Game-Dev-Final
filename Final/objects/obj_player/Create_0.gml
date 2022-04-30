@@ -31,7 +31,7 @@ drag = 0.25;
 grav = 1.5;
 
 //these are used to track coyote time
-coyote_max = 4;
+coyote_max = 8;
 coyote_frames = coyote_max;
 
 //main jump-related variables
