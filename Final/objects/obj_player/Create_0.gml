@@ -24,9 +24,14 @@ velocity_x = 0;
 velocity_y = 0;
 velocity_max = 20;
 
-move_speed = 2;
-drag = 0.3;
-grav = 5;
+move_speed = 1.5;
+drag = 0.25;
+grav = 1.5;
+
+jump_accel = 5;
+jump_max = 6;
+peak_time = 4;
+peak_grav_coef = 0.5;
 #endregion
 
 function cancel_velocity_x(){
@@ -38,24 +43,80 @@ function cancel_velocity_y(){
 
 #region //states
 	//0
-	function state_move(){
-		var input_x = move_speed * controller.input_normal_x;
-		
-		velocity_x = clamp(velocity_x+input_x, -velocity_max, velocity_max);
-		
+	function state_run(){
 		velocity_x = lerp(velocity_x, 0, drag);	
+		var input_x = move_speed * controller.input_normal_x;
+		velocity_x += input_x;
+		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+		
 		velocity_y += grav;
+		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
 		
 		
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
+		
+		if (controller.input_start_pressed) {
+			state_machine.state_change(1, 0);
+		}
 	}
 	//1
+	function state_jump(){
+		switch (state_machine.substate) {
+			//going up
+			case 0:
+				if (controller.input_start_released or state_machine.state_timer == jump_max){
+					state_machine.substate = 1;
+				}
+				velocity_y -= jump_accel;
+				velocity_y += grav;
+				
+				//air strafing just borrows from state_run for now, probably should tune later
+				velocity_x = lerp(velocity_x, 0, drag);	
+				var input_x = move_speed * controller.input_normal_x;
+				velocity_x += input_x;	
+			break;
+			
+			//peak
+			case 1:
+				if (state_machine.state_timer == jump_max+peak_time) {
+					state_machine.substate = 2;
+				}
+				velocity_y += grav*peak_grav_coef;
+				
+				//air strafing just borrows from state_run for now, probably should tune later
+				velocity_x = lerp(velocity_x, 0, drag);	
+				var input_x = move_speed * controller.input_normal_x;
+				velocity_x += input_x;	
+			break;
+			
+			//landing
+			case 2:
+				if (place_meeting(x, y+1, obj_solid)){
+					state_machine.state_change(0);
+				}
+			
+				velocity_y += grav;
+				
+				//air strafing just borrows from state_run for now, probably should tune later
+				velocity_x = lerp(velocity_x, 0, drag);	
+				var input_x = move_speed * controller.input_normal_x;
+				velocity_x += input_x;	
+			break;
+		}
+		
+		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
+		
+		move_x(velocity_x, cancel_velocity_x);
+		move_y(velocity_y, cancel_velocity_y);
+	}
+	//2
 	function state_respawn(){
 		x = respawn_x;
 		y = respawn_y;
 	}
 #endregion
 
-state_machine = new StateMachine([state_move, state_respawn], id);
+state_machine = new StateMachine([state_run, state_jump, state_respawn], id);
 state_machine.state_change(0);
