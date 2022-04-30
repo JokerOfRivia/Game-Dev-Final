@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_debug_green","path":"sprites/spr_debug_green/spr_debug_green.yy",},"order":1,},
+    {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":2,},
     {"id":{"name":"obj_debug_platform","path":"objects/obj_debug_platform/obj_debug_platform.yy",},"order":4,},
     {"id":{"name":"scr_utilities","path":"scripts/scr_utilities/scr_utilities.yy",},"order":1,},
     {"id":{"name":"obj_actor_tracker","path":"objects/obj_actor_tracker/obj_actor_tracker.yy",},"order":3,},

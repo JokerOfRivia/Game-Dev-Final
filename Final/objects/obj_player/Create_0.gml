@@ -11,6 +11,12 @@ is_riding = function(solid_id){
 	}
 	else return false;
 }
+function is_standing(){
+	if (place_meeting(x, y+1, obj_solid)){
+		return true;
+	}
+	else return false;
+}
 
 controller = obj_virtual_controller;
 
@@ -24,13 +30,19 @@ velocity_x = 0;
 velocity_y = 0;
 velocity_max = 20;
 
+//govern horizontal movement and gravity
 move_speed = 1.5;
 drag = 0.25;
 grav = 1.5;
 
+//these are used to track coyote time
+coyote_max = 4;
+coyote_frames = coyote_max;
+
+//main jump-related variables
 jump_accel = 5;
 jump_max = 6;
-peak_time = 4;
+peak_time = 3;
 peak_grav_coef = 0.5;
 #endregion
 
@@ -59,6 +71,16 @@ function cancel_velocity_y(){
 		if (controller.input_start_pressed) {
 			state_machine.state_change(1, 0);
 		}
+		if (!is_standing()){
+			if (coyote_frames > 0) {
+			coyote_frames--;
+			}
+			else {
+				coyote_frames = coyote_max;
+				state_machine.state_change(1, 2);
+			}
+		}
+		
 	}
 	//1
 	function state_jump(){
@@ -92,7 +114,7 @@ function cancel_velocity_y(){
 			
 			//landing
 			case 2:
-				if (place_meeting(x, y+1, obj_solid)){
+				if (is_standing()){
 					state_machine.state_change(0);
 				}
 			
