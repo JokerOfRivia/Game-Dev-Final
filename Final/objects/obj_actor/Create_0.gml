@@ -31,7 +31,12 @@ function collideCheck(x_check, y_check){
 is_riding = function(){
 	return false;
 }
-
+function is_standing(){
+	if (collide_check(x, y+1)){
+		return true;
+	}
+	else return false;
+}
 facing_x = 0;
 facing_y = 0;
 

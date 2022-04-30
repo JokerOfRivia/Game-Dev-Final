@@ -11,12 +11,7 @@ is_riding = function(solid_id){
 	}
 	else return false;
 }
-function is_standing(){
-	if (place_meeting(x, y+1, obj_solid)){
-		return true;
-	}
-	else return false;
-}
+
 
 controller = obj_virtual_controller;
 
@@ -68,9 +63,12 @@ function cancel_velocity_y(){
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
 		
+		//jump button
 		if (controller.input_start_pressed) {
 			state_machine.state_change(1, 0);
 		}
+		
+		//coyote time
 		if (!is_standing()){
 			if (coyote_frames > 0) {
 			coyote_frames--;
@@ -133,7 +131,7 @@ function cancel_velocity_y(){
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
 	}
-	//2
+	//2 (this is mostly a filler for now)
 	function state_respawn(){
 		x = respawn_x;
 		y = respawn_y;
