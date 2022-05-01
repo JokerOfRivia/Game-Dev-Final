@@ -1,5 +1,11 @@
 event_inherited();
-is_riding = is_standing;
+is_riding = function(solid_id){
+	if (place_meeting(x, y+1, solid_id) and solid_id.collidable){
+		return true;
+	}
+	else return false;
+}
+
 
 #region //gameplay values
 hp = 3;
@@ -28,54 +34,16 @@ function cancel_velocity_y(){
 	target_range = 150;
 #endregion
 
-#region //states
-//0
-function state_search(){
-	var hit = collision_line(x-target_range, y, x+target_range, y, obj_player, false, false);
+get_target = function(){
+	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
 	if (hit!=noone) {
-		target = hit;
-		state_machine.state_change(1);
+		target = hit;	
 	}
-	
-	velocity_y += grav;
-	
-	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);	
-	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
-	
-	move_x(velocity_x, cancel_velocity_x);
-	move_y(velocity_y, cancel_velocity_y);
 }
-
-//1
-function state_chase(){
-	velocity_x = lerp(velocity_x, 0, drag);	
-	
+chase = function(){
 	if (target!=noone) {
 		var dir = sign(target.x - x);
 		
 		velocity_x += (move_speed * dir);
 	}
-	
-	velocity_y += grav;
-	
-	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
-	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
-	
-	move_x(velocity_x, cancel_velocity_x);
-	move_y(velocity_y, cancel_velocity_y);
 }
-
-//2
-function state_die(){
-	instance_destroy();
-	
-	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
-	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
-	
-	move_x(velocity_x, cancel_velocity_x);
-	move_y(velocity_y, cancel_velocity_y);
-}
-#endregion
-
-state_machine = new StateMachine([state_search, state_chase, state_die], id);
-state_machine.state_change(0);

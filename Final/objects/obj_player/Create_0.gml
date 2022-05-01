@@ -6,7 +6,7 @@
 event_inherited();
 
 is_riding = function(solid_id){
-	if (place_meeting(x, y+1, solid_id)){
+	if (place_meeting(x, y+1, solid_id) and solid_id.collidable){
 		return true;
 	}
 	else return false;

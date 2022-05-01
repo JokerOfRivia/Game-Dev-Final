@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_actor",
-    "path": "objects/obj_actor/obj_actor.yy",
+    "name": "obj_enemy",
+    "path": "objects/obj_enemy/obj_enemy.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,15 +26,16 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parent Objects",
-    "path": "folders/Objects/Essential/Parent Objects.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_enemy",
+  "name": "obj_enemy_example",
   "tags": [],
   "resourceType": "GMObject",
 }
