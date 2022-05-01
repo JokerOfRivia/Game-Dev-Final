@@ -27,7 +27,7 @@ velocity_max = 20;
 
 //govern horizontal movement and gravity
 move_speed = 1.5;
-drag = 0.25;
+drag = 0.2;
 grav = 1.5;
 
 //these are used to track coyote time
@@ -36,8 +36,8 @@ coyote_frames = coyote_max;
 
 //main jump-related variables
 jump_accel = 5;
-jump_max = 6;
-peak_time = 3;
+jump_max = 5;
+peak_time = 10;
 peak_grav_coef = 0.5;
 #endregion
 
