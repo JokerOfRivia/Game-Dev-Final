@@ -6,7 +6,6 @@ is_riding = function(solid_id){
 	else return false;
 }
 
-
 #region //gameplay values
 hp = 3;
 #endregion

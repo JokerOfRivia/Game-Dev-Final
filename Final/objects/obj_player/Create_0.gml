@@ -9,7 +9,7 @@ is_riding = function(solid_id){
 	if (place_meeting(x, y+1, solid_id)){
 		return true;
 	}
-	else return false;
+	else return false
 }
 
 
@@ -31,7 +31,7 @@ drag = 0.2;
 grav = 1.5;
 
 //these are used to track coyote time
-coyote_max = 8;
+coyote_max = 5;
 coyote_frames = coyote_max;
 
 //main jump-related variables
@@ -54,31 +54,30 @@ function cancel_velocity_y(){
 		velocity_x = lerp(velocity_x, 0, drag);	
 		var input_x = move_speed * controller.input_normal_x;
 		velocity_x += input_x;
-		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
-		
-		velocity_y += grav;
-		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
-		
-		
-		move_x(velocity_x, cancel_velocity_x);
-		move_y(velocity_y, cancel_velocity_y);
 		
 		//jump button
 		if (controller.input_start_pressed) {
+			velocity_y = max(velocity_y, 0);
 			state_machine.state_change(1, 0);
 		}
 		
 		//coyote time
 		if (!is_standing()){
+			
 			if (coyote_frames > 0) {
-			coyote_frames--;
+				coyote_frames--;
 			}
 			else {
-				coyote_frames = coyote_max;
 				state_machine.state_change(1, 2);
 			}
 		}
+		velocity_y += grav;
+		//apply velocity
+		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
 		
+		move_x(velocity_x, cancel_velocity_x);
+		move_y(velocity_y, cancel_velocity_y);
 	}
 	//1
 	function state_jump(){
@@ -102,6 +101,9 @@ function cancel_velocity_y(){
 				if (state_machine.state_timer == jump_max+peak_time) {
 					state_machine.substate = 2;
 				}
+				if (is_standing()) state_machine.state_change(0);
+				
+				//apply reduced gravity
 				velocity_y += grav*peak_grav_coef;
 				
 				//air strafing just borrows from state_run for now, probably should tune later
@@ -112,7 +114,8 @@ function cancel_velocity_y(){
 			
 			//landing
 			case 2:
-				if (is_standing()){
+				if (is_standing() or is_riding(obj_solid)){
+					coyote_frames = coyote_max;
 					state_machine.state_change(0);
 				}
 			

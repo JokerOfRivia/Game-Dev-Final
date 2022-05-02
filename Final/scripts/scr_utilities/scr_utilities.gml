@@ -11,7 +11,7 @@ function wrap(val, min, max){
 }
 
 function ds_list_contains(id, value){
-	return ds_list_find_index(id, value)!=-1 ? false: true;
+	return ds_list_find_index(id, value)!=-1 ? true: false;
 }
 
 function ds_list_transfer(source, id, value){

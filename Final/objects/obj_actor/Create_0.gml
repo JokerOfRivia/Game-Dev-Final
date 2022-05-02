@@ -40,12 +40,12 @@ function is_standing(){
 facing_x = 0;
 facing_y = 0;
 
-function default_move_action(){};
-function squish_move_action(){
+default_move_action = function(){};
+squish_move_action = function(){
 	//moving solids will call this if they trap an actor out of bounds
 }
 
-function move_x(x_dis, action){
+function move_x(x_dis, action) {
 	var remainder = x_dis;
 	var move = round(remainder);
 	var dir = sign(move);
@@ -63,7 +63,7 @@ function move_x(x_dis, action){
 	}
 }
 
-function move_y(y_dis, action){
+function move_y(y_dis, action) {
 	var remainder = y_dis;
 	var move = round(remainder);
 	var dir = sign(move);

@@ -1,2 +1,2 @@
 event_inherited();
-spd = 1;
+spd = 4;

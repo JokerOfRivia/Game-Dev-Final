@@ -25,6 +25,14 @@ function move(x_dis, y_dis){
 	var x_move = round(x_remainder);
 	var y_move = round(y_remainder);
 	
+	var riding_list = ds_list_create();
+	
+	for (var i = 0; i < ds_list_size(obj_actor_tracker.actor_list); ++i) {
+	    var actor = obj_actor_tracker.actor_list[|i ];
+		
+		if (actor.is_riding(id)) ds_list_add(riding_list, actor); 
+	}
+	
 	if (x_move != 0) {
 		x_remainder -= x_move;
 		x+=x_move;
@@ -37,7 +45,7 @@ function move(x_dis, y_dis){
 					//push right
 					actor.move_x(bbox_right - actor.bbox_left, actor.squish_move_action);
 				}
-				else if (actor.is_riding(id)) {
+				else if (ds_list_contains(riding_list, actor)) {
 					//carry
 					actor.move_x(x_move, actor.default_move_action);					
 				}
@@ -52,7 +60,7 @@ function move(x_dis, y_dis){
 					//push right
 					actor.move_x(bbox_left - actor.bbox_right, actor.squish_move_action);
 				}
-				else if (actor.is_riding(id)) {
+				else if (ds_list_contains(riding_list, actor)) {
 					//carry
 					actor.move_x(x_move, actor.default_move_action);					
 				}
@@ -71,7 +79,7 @@ function move(x_dis, y_dis){
 					//push down
 					actor.move_y(bbox_bottom - actor.bbox_top, actor.squish_move_action);
 				}
-				else if (actor.is_riding(id)) {
+				else if (ds_list_contains(riding_list, actor)) {
 					//carry
 					actor.move_y(y_move, actor.default_move_action);					
 				}
@@ -86,14 +94,15 @@ function move(x_dis, y_dis){
 					//push up
 					actor.move_y(bbox_top - actor.bbox_bottom, actor.squish_move_action);
 				}
-				else if (actor.is_riding(id)) {
+				else if (ds_list_contains(riding_list, actor)) {
 					//carry
-					actor.move_y(x_move, actor.default_move_action);					
+					actor.move_y(y_move, actor.default_move_action);					
 				}
 			}
 		}
 	}
 	
+	ds_list_destroy(riding_list);
 	collidable = true;
 }
 
