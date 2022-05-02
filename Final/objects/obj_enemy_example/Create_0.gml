@@ -1,5 +1,17 @@
 event_inherited();
 
+#region //gameplay values
+hp = 3;
+#endregion
+
+#region //physics values
+
+#endregion
+
+#region //ai
+target_range = 500;
+#endregion
+
 #region //states
 //0
 function state_search(){

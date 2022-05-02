@@ -16,9 +16,16 @@ is_riding = function(solid_id){
 controller = obj_virtual_controller;
 
 #region //gameplay vals
+hp_max = 3;
+hp = hp_max;
+
 respawn_x = x;
 respawn_y = y;
 #endregion
+
+function take_damage(amount){
+	hp = max(0, hp-amount);
+}
 
 #region //physics values
 velocity_x = 0;
