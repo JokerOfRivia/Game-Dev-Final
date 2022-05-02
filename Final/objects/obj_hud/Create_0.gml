@@ -5,7 +5,7 @@
 	need a counter for score, coins, or lives, you could make *all* of them with
 	hud_counter.
 	
-	Each HUD element has a "draw" function that the obj_hud executs during its own GUI event.
+	Each HUD element has a "draw" function that the obj_hud executes during its own GUI event.
 */
 elements = ds_list_create();
 
@@ -18,6 +18,46 @@ function hud_element(x, y, sprite) constructor {
 	
 	static draw = function() {
 		draw_sprite(sprite_index, image_index, x, y);
+		
+		image_index = wrap(image_index+1, 0, image_index_max);
+	}
+}
+
+function hud_piece_counter(x, y, sprite, separation, object, variable_name, is_vertical, empty_sprite, secondary_variable) : hud_element(x, y, sprite) constructor {
+	self.separation = separation;
+	self.object = object
+	value = variable_name;
+	self.vertical = is_vertical;
+	self.sprite_index_empty = empty_sprite;
+	self.compare = secondary_variable;
+	
+	static draw = function() {
+		if (!instance_exists(object)) {
+				exit;
+		}
+		
+		var val = round(variable_instance_get(object, value));
+		
+		var offset = 0;
+		
+		if(sprite_index_empty==undefined or compare==undefined) {
+			for (var i = 0; i < val; ++i) {
+			    draw_sprite(sprite_index, image_index, x + offset*!vertical, y + offset*vertical);
+				offset+=separation+sprite_get_width(sprite_index);
+			}
+		}
+		else {
+			var maximum = variable_instance_get(object, compare);
+			var difference = maximum-val;
+			for (var i = 0; i < val; ++i) {
+			    draw_sprite(sprite_index, image_index, x + offset*!vertical, y + offset*vertical);
+				offset+=separation+sprite_get_width(sprite_index);
+			}
+			for (var i = 0; i < difference; ++i) {
+				draw_sprite(sprite_index_empty, image_index, x + offset*!vertical, y + offset*vertical);
+				offset+=separation+sprite_get_width(sprite_index_empty);
+			}
+		}
 		
 		image_index = wrap(image_index+1, 0, image_index_max);
 	}
@@ -49,7 +89,16 @@ function add_element(type, arguments) {
 		ds_list_add(elements, new hud_element(arguments[0], arguments[1], arguments[2]));
 		break;
 		case "hud_counter":
-		ds_list_add(elements, new hud_counter(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6],));
+		ds_list_add(elements, new hud_counter(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6]));
+		break;
+		case "hud_piece_counter":
+		ds_list_add(elements, new hud_piece_counter(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5],  arguments[6], arguments[7], arguments[8]));
 		break;
 	}
 }
+
+function initialize_debug_hud(){
+	add_element("hud_piece_counter", [100, 100, spr_debug_hud, 8, obj_player, "hp", false, spr_debug_hud2, "hp_max"]);
+}
+
+initialize_debug_hud();

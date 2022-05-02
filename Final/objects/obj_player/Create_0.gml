@@ -21,6 +21,9 @@ hp = hp_max;
 
 respawn_x = x;
 respawn_y = y;
+
+hp_max = 3;
+hp = hp_max;
 #endregion
 
 function take_damage(amount){
