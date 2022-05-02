@@ -74,22 +74,18 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 	};
 }
 
-function change_panel(i){
-	active_panel = 1;
-}
-
 active_panel = 0;
 
 test_elements = ds_list_create();
 options_elements = ds_list_create();
 
 //main
-ds_list_add(test_elements, new menu_button(300, 200, 100, 80, spr_debug_red, "START", room_goto, rm_1));
-ds_list_add(test_elements, new menu_button(300, 400, 100, 80, spr_debug_red, "OPTIONS",  function(){active_panel = 1}, ));
-ds_list_add(test_elements, new menu_button(300, 600, 100, 80, spr_debug_red, "QUIT", game_end,));
+ds_list_add(test_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "START", room_goto, rm_1));
+ds_list_add(test_elements, new menu_button(300, 400, 100, 80, spr_debug_button, "OPTIONS",  function(){active_panel = 1}, ));
+ds_list_add(test_elements, new menu_button(300, 600, 100, 80, spr_debug_button, "QUIT", game_end,));
 //options
-ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_red, "Fullscreen", toggle_fullscreen,))
-ds_list_add(options_elements, new menu_button(300, 400, 100, 80, spr_debug_red, "BACK", function(){active_panel = 0}, ))
+ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "Fullscreen", toggle_fullscreen,))
+ds_list_add(options_elements, new menu_button(300, 400, 100, 80, spr_debug_button, "BACK", function(){active_panel = 0}, ))
 
 panel_array = [new panel(300, 300, 200, 200, test_elements), new panel(300, 300, 200, 200, options_elements)];
 
