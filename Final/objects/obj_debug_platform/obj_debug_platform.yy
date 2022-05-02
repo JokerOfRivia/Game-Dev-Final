@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Essential",
-    "path": "folders/Objects/Essential.yy",
+    "name": "Debug",
+    "path": "folders/Objects/Debug.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_debug_platform",

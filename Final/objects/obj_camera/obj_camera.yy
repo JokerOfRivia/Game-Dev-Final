@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "spr_debug_blue",
-    "path": "sprites/spr_debug_blue/spr_debug_blue.yy",
-  },
+  "spriteId": null,
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_enemy",
-    "path": "objects/obj_enemy/obj_enemy.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -25,17 +19,16 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Debug",
-    "path": "folders/Objects/Debug.yy",
+    "name": "Essential",
+    "path": "folders/Objects/Essential.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_enemy_example",
+  "name": "obj_camera",
   "tags": [],
   "resourceType": "GMObject",
 }
