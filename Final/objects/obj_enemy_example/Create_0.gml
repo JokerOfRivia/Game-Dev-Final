@@ -12,6 +12,26 @@ hp = 3;
 target_range = 500;
 #endregion
 
+take_damage = function(amount){
+	hp = max(0, hp-amount);
+}
+attack = function(){
+	instance_create_hurtbox(64 * facing_x, 0, 64, 64, 10, id, obj_player, 0);
+}
+get_target = function(){
+	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
+	if (hit!=noone) {
+		target = hit;	
+	}
+}
+chase = function(){
+	if (target!=noone) {
+		var dir = (target.x - x);
+		if abs(dir) < 100 attack();
+		velocity_x += (move_speed * sign(dir));
+	}
+}
+
 #region //states
 //0
 function state_search(){

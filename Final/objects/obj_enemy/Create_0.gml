@@ -39,7 +39,7 @@ take_damage = function(amount){
 	hp = max(0, hp-amount);
 }
 attack = function(){
-	instance_create_hurtbox(64 * facing_x, 0, 64, 64, 120, id, obj_player, 0);
+	instance_create_hurtbox(64 * facing_x, 0, 64, 64, 10, id, obj_player, 0);
 }
 get_target = function(){
 	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
