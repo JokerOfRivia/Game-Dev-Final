@@ -1,1 +1,1 @@
-test_panel.draw();
+panel_array[active_panel].draw();

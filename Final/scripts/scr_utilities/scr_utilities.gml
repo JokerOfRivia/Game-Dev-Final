@@ -1,3 +1,7 @@
+function toggle_fullscreen() {
+	window_set_fullscreen(!window_get_fullscreen());
+}
+
 function pythagoras(val1, val2){
 	return sqrt((val1) + (val2));
 }

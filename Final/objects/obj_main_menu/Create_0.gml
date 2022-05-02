@@ -4,8 +4,6 @@ function panel(x, y, width, height, elements) constructor {
 	self.width = width;
 	self.height = height;
 	
-	self.active = true;
-	
 	self.elements = elements;
 	
 	self.highlighted = 0;
@@ -46,7 +44,10 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 	self.argument = argument;
 	
 	on_press = function(){
-		callback(self.argument);
+		if (callback!=undefined) {
+			if (self.argument!=undefined) callback(self.argument);
+			else callback();
+		}
 	};
 	
 	static autofit = function(padding){
@@ -73,19 +74,23 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 	};
 }
 
-function callback_test() {
-	game_end();
+function change_panel(i){
+	active_panel = 1;
 }
-function callback_test2() {
-	show_message("test 2");
-}
+
+active_panel = 0;
 
 test_elements = ds_list_create();
-ds_list_add(test_elements, new menu_button(300, 300, 200, 200, spr_debug_red, "QUIT", callback_test,));
-ds_list_add(test_elements, new menu_button(300, 400, 200, 200, spr_debug_red, "START", room_goto, rm_1));
+options_elements = ds_list_create();
 
-for (var i = 0; i < 2; ++i) {
-    test_elements[| i].autofit(20);
-}
+//main
+ds_list_add(test_elements, new menu_button(300, 200, 100, 80, spr_debug_red, "START", room_goto, rm_1));
+ds_list_add(test_elements, new menu_button(300, 400, 100, 80, spr_debug_red, "OPTIONS",  function(){active_panel = 1}, ));
+ds_list_add(test_elements, new menu_button(300, 600, 100, 80, spr_debug_red, "QUIT", game_end,));
+//options
+ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_red, "Fullscreen", toggle_fullscreen,))
+ds_list_add(options_elements, new menu_button(300, 400, 100, 80, spr_debug_red, "BACK", function(){active_panel = 0}, ))
 
-test_panel = new panel(300, 300, 200, 200, test_elements);
+panel_array = [new panel(300, 300, 200, 200, test_elements), new panel(300, 300, 200, 200, options_elements)];
+
+
