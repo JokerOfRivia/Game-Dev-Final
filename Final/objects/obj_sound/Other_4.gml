@@ -1,10 +1,11 @@
 
 switch (room) {
 	case rm_menu:
-		set_music(ost_demo2);
-		set_music(ost_demo2);
+		stop_music();
+		set_music(ost_smalldarkroom);
 	break;
 	case rm_1:
+		stop_music();
 		set_music(ost_demo);
 	break;
 }
