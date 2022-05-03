@@ -81,11 +81,14 @@ options_elements = ds_list_create();
 
 //main
 ds_list_add(test_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "START", room_goto, rm_1));
-ds_list_add(test_elements, new menu_button(300, 400, 100, 80, spr_debug_button, "OPTIONS",  function(){active_panel = 1}, ));
-ds_list_add(test_elements, new menu_button(300, 600, 100, 80, spr_debug_button, "QUIT", game_end,));
+ds_list_add(test_elements, new menu_button(300, 350, 100, 80, spr_debug_button, "OPTIONS",  function(){active_panel = 1}, ));
+ds_list_add(test_elements, new menu_button(300, 500, 100, 80, spr_debug_button, "QUIT", game_end,));
 //options
-ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "Fullscreen", toggle_fullscreen,))
-ds_list_add(options_elements, new menu_button(300, 400, 100, 80, spr_debug_button, "BACK", function(){active_panel = 0}, ))
+ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "Fullscreen", toggle_fullscreen,));
+ds_list_add(options_elements, new menu_button(300, 350, 100, 80, spr_debug_button, "Toggle Music", function(){
+	if (obj_sound.ost_current==-1) obj_sound.set_music(ost_demo); else obj_sound.stop_music();
+	},));
+ds_list_add(options_elements, new menu_button(300, 500, 100, 80, spr_debug_button, "BACK", function(){active_panel = 0}, ));
 
 panel_array = [new panel(300, 300, 200, 200, test_elements), new panel(300, 300, 200, 200, options_elements)];
 

@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_demo.ogg",
+  "soundFile": "ost_demo.ogg",
   "duration": 55.52238,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_demo",
+  "name": "ost_demo",
   "tags": [],
   "resourceType": "GMSound",
 }
