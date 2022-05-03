@@ -1,0 +1,423 @@
+You are using YYP Maker v1.1.4, released in 31-03-2022
+
+
+
+[02-05-2022 21:26:42] Initialized GameMaker Project: Final.yyp
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/animcurves
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/extensions
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/fonts
+[02-05-2022 21:26:42] Checking fnt_pixelarribig
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarribig
+[02-05-2022 21:26:42] Checking fnt_pixelarri
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarri
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarri
+[02-05-2022 21:26:42] Checking fnt_pixelarri.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarri/fnt_pixelarri.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarri/fnt_pixelarri.yy
+[02-05-2022 21:26:42] Par: "folders/Fonts" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarri/fnt_pixelarri.yy"
+[02-05-2022 21:26:42] Found Font: fnt_pixelarri
+[02-05-2022 21:26:42] Checking fnt_pixelarri.png
+[02-05-2022 21:26:42] Checking fnt_pixelarri.old.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarribig
+[02-05-2022 21:26:42] Checking fnt_pixelarribig.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarribig/fnt_pixelarribig.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarribig/fnt_pixelarribig.yy
+[02-05-2022 21:26:42] Par: "folders/Fonts" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/fonts/fnt_pixelarribig/fnt_pixelarribig.yy"
+[02-05-2022 21:26:42] Found Font: fnt_pixelarribig
+[02-05-2022 21:26:42] Checking fnt_pixelarribig.png
+[02-05-2022 21:26:42] Checking fnt_pixelarribig.old.png
+[02-05-2022 21:26:42] Checking fnt_pixelarri.png
+[02-05-2022 21:26:42] Checking fnt_pixelarri.old.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/notes
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects
+[02-05-2022 21:26:42] Checking obj_virtual_controller
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_virtual_controller
+[02-05-2022 21:26:42] Checking obj_solid
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_solid
+[02-05-2022 21:26:42] Checking obj_shadertest
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_shadertest
+[02-05-2022 21:26:42] Checking obj_player
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_player
+[02-05-2022 21:26:42] Checking obj_main_menu
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_main_menu
+[02-05-2022 21:26:42] Checking obj_hurtbox
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hurtbox
+[02-05-2022 21:26:42] Checking obj_hud
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hud
+[02-05-2022 21:26:42] Checking obj_enemy_example
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy_example
+[02-05-2022 21:26:42] Checking obj_enemy
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy
+[02-05-2022 21:26:42] Checking obj_debug_platform
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_debug_platform
+[02-05-2022 21:26:42] Checking obj_camera
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_camera
+[02-05-2022 21:26:42] Checking obj_actor_tracker
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor_tracker
+[02-05-2022 21:26:42] Checking obj_actor
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor
+[02-05-2022 21:26:42] Checking obj_actor.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor/obj_actor.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor/obj_actor.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential/Parent Objects" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor/obj_actor.yy"
+[02-05-2022 21:26:42] Found Object: obj_actor
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor_tracker
+[02-05-2022 21:26:42] Checking obj_actor_tracker.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor_tracker/obj_actor_tracker.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor_tracker/obj_actor_tracker.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_actor_tracker/obj_actor_tracker.yy"
+[02-05-2022 21:26:42] Found Object: obj_actor_tracker
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Checking CleanUp_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_camera
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_camera.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_camera/obj_camera.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_camera/obj_camera.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_camera/obj_camera.yy"
+[02-05-2022 21:26:42] Found Object: obj_camera
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_debug_platform
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_debug_platform.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_debug_platform/obj_debug_platform.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_debug_platform/obj_debug_platform.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_debug_platform/obj_debug_platform.yy"
+[02-05-2022 21:26:42] Found Object: obj_debug_platform
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy
+[02-05-2022 21:26:42] Checking obj_enemy.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy/obj_enemy.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy/obj_enemy.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential/Parent Objects" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy/obj_enemy.yy"
+[02-05-2022 21:26:42] Found Object: obj_enemy
+[02-05-2022 21:26:42] Checking Draw_0.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy_example
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_enemy_example.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy_example/obj_enemy_example.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy_example/obj_enemy_example.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_enemy_example/obj_enemy_example.yy"
+[02-05-2022 21:26:42] Found Object: obj_enemy_example
+[02-05-2022 21:26:42] Checking Draw_0.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hud
+[02-05-2022 21:26:42] Checking obj_hud.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hud/obj_hud.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hud/obj_hud.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hud/obj_hud.yy"
+[02-05-2022 21:26:42] Found Object: obj_hud
+[02-05-2022 21:26:42] Checking Draw_74.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Checking CleanUp_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hurtbox
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_hurtbox.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hurtbox/obj_hurtbox.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hurtbox/obj_hurtbox.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_hurtbox/obj_hurtbox.yy"
+[02-05-2022 21:26:42] Found Object: obj_hurtbox
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_main_menu
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_main_menu.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_main_menu/obj_main_menu.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_main_menu/obj_main_menu.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Menu" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_main_menu/obj_main_menu.yy"
+[02-05-2022 21:26:42] Found Object: obj_main_menu
+[02-05-2022 21:26:42] Checking Draw_64.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Checking CleanUp_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_player
+[02-05-2022 21:26:42] Checking Step_0.gml
+[02-05-2022 21:26:42] Checking obj_player.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_player/obj_player.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_player/obj_player.yy
+[02-05-2022 21:26:42] Par: "folders/Objects" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_player/obj_player.yy"
+[02-05-2022 21:26:42] Found Object: obj_player
+[02-05-2022 21:26:42] Checking Draw_0.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_shadertest
+[02-05-2022 21:26:42] Checking obj_shadertest.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_shadertest/obj_shadertest.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_shadertest/obj_shadertest.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_shadertest/obj_shadertest.yy"
+[02-05-2022 21:26:42] Found Object: obj_shadertest
+[02-05-2022 21:26:42] Checking Draw_0.gml
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_solid
+[02-05-2022 21:26:42] Checking obj_solid.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_solid/obj_solid.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_solid/obj_solid.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential/Parent Objects" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_solid/obj_solid.yy"
+[02-05-2022 21:26:42] Found Object: obj_solid
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_virtual_controller
+[02-05-2022 21:26:42] Checking Step_1.gml
+[02-05-2022 21:26:42] Checking obj_virtual_controller.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_virtual_controller/obj_virtual_controller.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_virtual_controller/obj_virtual_controller.yy
+[02-05-2022 21:26:42] Par: "folders/Objects/Essential" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/objects/obj_virtual_controller/obj_virtual_controller.yy"
+[02-05-2022 21:26:42] Found Object: obj_virtual_controller
+[02-05-2022 21:26:42] Checking Create_0.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options
+[02-05-2022 21:26:42] Checking windowsuap
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/windowsuap
+[02-05-2022 21:26:42] Checking windows
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/windows
+[02-05-2022 21:26:42] Checking tvos
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/tvos
+[02-05-2022 21:26:42] Checking main
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/main
+[02-05-2022 21:26:42] Checking mac
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/mac
+[02-05-2022 21:26:42] Checking linux
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/linux
+[02-05-2022 21:26:42] Checking ios
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/ios
+[02-05-2022 21:26:42] Checking html5
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/html5
+[02-05-2022 21:26:42] Checking android
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/android
+[02-05-2022 21:26:42] Checking amazonfire
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/amazonfire
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/amazonfire
+[02-05-2022 21:26:42] Checking options_amazonfire.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/amazonfire/options_amazonfire.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/amazonfire/options_amazonfire.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/android
+[02-05-2022 21:26:42] Checking options_android.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/android/options_android.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/android/options_android.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/html5
+[02-05-2022 21:26:42] Checking options_html5.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/html5/options_html5.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/html5/options_html5.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/ios
+[02-05-2022 21:26:42] Checking options_ios.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/ios/options_ios.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/ios/options_ios.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/linux
+[02-05-2022 21:26:42] Checking options_linux.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/linux/options_linux.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/linux/options_linux.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/mac
+[02-05-2022 21:26:42] Checking options_mac.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/mac/options_mac.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/mac/options_mac.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/main
+[02-05-2022 21:26:42] Checking options_main.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/main/options_main.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/main/options_main.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/tvos
+[02-05-2022 21:26:42] Checking options_tvos.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/tvos/options_tvos.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/tvos/options_tvos.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/windows
+[02-05-2022 21:26:42] Checking options_windows.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/windows/options_windows.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/windows/options_windows.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/options/windowsuap
+[02-05-2022 21:26:42] Checking options_windowsuap.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/options/windowsuap/options_windowsuap.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/options/windowsuap/options_windowsuap.yy
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/paths
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/rooms
+[02-05-2022 21:26:42] Checking rm_menu
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_menu
+[02-05-2022 21:26:42] Checking rm_1
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_1
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_1
+[02-05-2022 21:26:42] Checking rm_1.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_1/rm_1.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_1/rm_1.yy
+[02-05-2022 21:26:42] Par: "folders/Rooms" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_1/rm_1.yy"
+[02-05-2022 21:26:42] Found Room: rm_1
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_menu
+[02-05-2022 21:26:42] Checking rm_menu.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_menu/rm_menu.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_menu/rm_menu.yy
+[02-05-2022 21:26:42] Par: "folders/Rooms" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/rooms/rm_menu/rm_menu.yy"
+[02-05-2022 21:26:42] Found Room: rm_menu
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts
+[02-05-2022 21:26:42] Checking scr_utilities
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_utilities
+[02-05-2022 21:26:42] Checking scr_statemachine
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_statemachine
+[02-05-2022 21:26:42] Checking scr_hurtbox
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_hurtbox
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_hurtbox
+[02-05-2022 21:26:42] Checking scr_hurtbox.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_hurtbox/scr_hurtbox.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_hurtbox/scr_hurtbox.yy
+[02-05-2022 21:26:42] Par: "folders/Scripts" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_hurtbox/scr_hurtbox.yy"
+[02-05-2022 21:26:42] Found Script: scr_hurtbox
+[02-05-2022 21:26:42] Checking scr_hurtbox.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_statemachine
+[02-05-2022 21:26:42] Checking scr_statemachine.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_statemachine/scr_statemachine.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_statemachine/scr_statemachine.yy
+[02-05-2022 21:26:42] Par: "folders/Scripts" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_statemachine/scr_statemachine.yy"
+[02-05-2022 21:26:42] Found Script: scr_statemachine
+[02-05-2022 21:26:42] Checking scr_statemachine.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_utilities
+[02-05-2022 21:26:42] Checking scr_utilities.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_utilities/scr_utilities.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_utilities/scr_utilities.yy
+[02-05-2022 21:26:42] Par: "folders/Scripts" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/scripts/scr_utilities/scr_utilities.yy"
+[02-05-2022 21:26:42] Found Script: scr_utilities
+[02-05-2022 21:26:42] Checking scr_utilities.gml
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sequences
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/shaders
+[02-05-2022 21:26:42] Checking shd_outline
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_outline
+[02-05-2022 21:26:42] Checking shd_flash
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_flash
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_flash
+[02-05-2022 21:26:42] Checking shd_flash.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_flash/shd_flash.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_flash/shd_flash.yy
+[02-05-2022 21:26:42] Par: "folders/Shaders" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_flash/shd_flash.yy"
+[02-05-2022 21:26:42] Found Shader: shd_flash
+[02-05-2022 21:26:42] Checking shd_flash.vsh
+[02-05-2022 21:26:42] Checking shd_flash.fsh
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_outline
+[02-05-2022 21:26:42] Checking shd_outline.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_outline/shd_outline.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_outline/shd_outline.yy
+[02-05-2022 21:26:42] Par: "folders/Shaders" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/shaders/shd_outline/shd_outline.yy"
+[02-05-2022 21:26:42] Found Shader: shd_outline
+[02-05-2022 21:26:42] Checking shd_outline.vsh
+[02-05-2022 21:26:42] Checking shd_outline.fsh
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sounds
+[02-05-2022 21:26:42] Checking snd_demo
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sounds/snd_demo
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sounds/snd_demo
+[02-05-2022 21:26:42] Checking snd_demo.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sounds/snd_demo/snd_demo.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sounds/snd_demo/snd_demo.yy
+[02-05-2022 21:26:42] Par: "folders/Sounds" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sounds/snd_demo/snd_demo.yy"
+[02-05-2022 21:26:42] Found Sound: snd_demo
+[02-05-2022 21:26:42] Checking snd_demo.ogg
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites
+[02-05-2022 21:26:42] Checking spr_debug_shader
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader
+[02-05-2022 21:26:42] Checking spr_debug_red
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red
+[02-05-2022 21:26:42] Checking spr_debug_hud2
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2
+[02-05-2022 21:26:42] Checking spr_debug_hud
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud
+[02-05-2022 21:26:42] Checking spr_debug_green
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green
+[02-05-2022 21:26:42] Checking spr_debug_button
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button
+[02-05-2022 21:26:42] Checking spr_debug_blue
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue
+[02-05-2022 21:26:42] Checking spr_debug_blue.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/spr_debug_blue.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/spr_debug_blue.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/spr_debug_blue.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_blue
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_blue/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Checking aa7564e2-1714-47af-ac1b-9a5d446629cd.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button
+[02-05-2022 21:26:42] Checking spr_debug_button.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/spr_debug_button.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/spr_debug_button.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/spr_debug_button.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_button
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/layers
+[02-05-2022 21:26:42] Checking 1a68f8bd-2de9-4214-aaaa-bbef7751ed80.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/layers
+[02-05-2022 21:26:42] Checking 1a68f8bd-2de9-4214-aaaa-bbef7751ed80
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/layers/1a68f8bd-2de9-4214-aaaa-bbef7751ed80
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_button/layers/1a68f8bd-2de9-4214-aaaa-bbef7751ed80
+[02-05-2022 21:26:42] Checking 7e824b3b-3585-4143-9dad-21d73da3da4b.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green
+[02-05-2022 21:26:42] Checking spr_debug_green.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/spr_debug_green.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/spr_debug_green.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/spr_debug_green.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_green
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_green/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Checking aa7564e2-1714-47af-ac1b-9a5d446629cd.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud
+[02-05-2022 21:26:42] Checking spr_debug_hud.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/spr_debug_hud.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/spr_debug_hud.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/spr_debug_hud.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_hud
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/layers
+[02-05-2022 21:26:42] Checking a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/layers
+[02-05-2022 21:26:42] Checking a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/layers/a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud/layers/a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Checking a382c151-adca-42bf-adeb-066eea4d48ec.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2
+[02-05-2022 21:26:42] Checking spr_debug_hud2.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/spr_debug_hud2.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/spr_debug_hud2.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/spr_debug_hud2.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_hud2
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/layers
+[02-05-2022 21:26:42] Checking a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/layers
+[02-05-2022 21:26:42] Checking a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/layers/a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_hud2/layers/a41cfbc1-0251-48bf-b9a0-63ae97ce7bd5
+[02-05-2022 21:26:42] Checking a382c151-adca-42bf-adeb-066eea4d48ec.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red
+[02-05-2022 21:26:42] Checking spr_debug_red.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/spr_debug_red.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/spr_debug_red.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/spr_debug_red.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_red
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/layers
+[02-05-2022 21:26:42] Checking e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_red/layers/e77d3545-b348-4765-9387-9e9f81dbed1f
+[02-05-2022 21:26:42] Checking aa7564e2-1714-47af-ac1b-9a5d446629cd.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader
+[02-05-2022 21:26:42] Checking spr_debug_shader.yy
+[02-05-2022 21:26:42] Parsing D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/spr_debug_shader.yy
+[02-05-2022 21:26:42] Reading D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/spr_debug_shader.yy
+[02-05-2022 21:26:42] Par: "folders/Sprites/Debug" at dir: "D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/spr_debug_shader.yy"
+[02-05-2022 21:26:42] Found Sprite: spr_debug_shader
+[02-05-2022 21:26:42] Checking layers
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/layers
+[02-05-2022 21:26:42] Checking ab1ce33f-17ec-4243-9056-f2c103237682.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/layers
+[02-05-2022 21:26:42] Checking ab1ce33f-17ec-4243-9056-f2c103237682
+[02-05-2022 21:26:42] Directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/layers/ab1ce33f-17ec-4243-9056-f2c103237682
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/sprites/spr_debug_shader/layers/ab1ce33f-17ec-4243-9056-f2c103237682
+[02-05-2022 21:26:42] Checking fdac51ec-a0ba-4ab7-806b-0aba31686f6c.png
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/tilesets
+[02-05-2022 21:26:42] Current parent directory: D:/GameMaker Projects/Game-Dev-Final/Final/timelines
+[02-05-2022 21:26:42] Moving files to trash...
+[02-05-2022 21:26:42] Files yeeted successfully!
+[02-05-2022 21:26:42] Generating YYP...
+[02-05-2022 21:26:42] Final.yyp created successfully!
