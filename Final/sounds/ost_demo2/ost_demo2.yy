@@ -11,14 +11,14 @@
     "name": "ag_ost",
     "path": "audiogroups/ag_ost",
   },
-  "soundFile": "ost_demo.ogg",
-  "duration": 55.52238,
+  "soundFile": "ost_demo2.ogg",
+  "duration": 141.492538,
   "parent": {
     "name": "OST",
     "path": "folders/Sounds/OST.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ost_demo",
+  "name": "ost_demo2",
   "tags": [],
   "resourceType": "GMSound",
 }

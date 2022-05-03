@@ -20,9 +20,11 @@ function panel(x, y, width, height, elements) constructor {
 		}
 		else {
 			if(obj_virtual_controller.input_down_pressed) {
+				obj_sound.play_sfx(sfx_test);
 				highlighted = wrap(highlighted + 1, 0, ds_list_size(elements))
 			}
 			if(obj_virtual_controller.input_up_pressed) {
+				obj_sound.play_sfx(sfx_test);
 				highlighted = wrap(highlighted - 1, 0, ds_list_size(elements))
 			}
 		}
@@ -86,7 +88,7 @@ ds_list_add(test_elements, new menu_button(300, 500, 100, 80, spr_debug_button, 
 //options
 ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "Fullscreen", toggle_fullscreen,));
 ds_list_add(options_elements, new menu_button(300, 350, 100, 80, spr_debug_button, "Toggle Music", function(){
-	if (obj_sound.ost_current==-1) obj_sound.set_music(ost_demo); else obj_sound.stop_music();
+	if (obj_sound.music_volume == 0.0) obj_sound.set_music_volume(1); else obj_sound.set_music_volume(0);
 	},));
 ds_list_add(options_elements, new menu_button(300, 500, 100, 80, spr_debug_button, "BACK", function(){active_panel = 0}, ));
 
