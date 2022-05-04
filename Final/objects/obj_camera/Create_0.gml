@@ -18,6 +18,8 @@ function screenshake(duration, intensity) constructor{
 	self.duration = duration;
 	self.intensity = intensity;
 	
+	decay = 1-power(duration+2, -2);
+	
 	function get_displacement(){
 		var displace_x = 0;
 		var displace_y = 0;
@@ -28,6 +30,7 @@ function screenshake(duration, intensity) constructor{
 		else {
 			displace_x = choose(intensity, -intensity);
 			displace_y = choose(intensity, -intensity);
+			intensity*=decay;
 		}
 		duration--;
 		return [displace_x, displace_y];

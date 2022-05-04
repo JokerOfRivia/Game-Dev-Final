@@ -19,6 +19,10 @@ controller = obj_virtual_controller;
 hp_max = 3;
 hp = hp_max;
 
+base_damage = 1;
+cancel_buffer = 1;
+input_window = 100;
+
 respawn_x = x;
 respawn_y = y;
 
@@ -28,6 +32,23 @@ hp = hp_max;
 
 function take_damage(amount){
 	hp = max(0, hp-amount);
+}
+function attack(version){
+	switch version {
+		case 0:
+			instance_create_hurtbox(controller.facing_x*sprite_width -2, 8, 12, 13, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed;
+		break;
+		case 1:
+			instance_create_hurtbox(controller.facing_x*sprite_width -2, -4, 24, 13, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed;
+		break;
+		case 2:
+			instance_create_hurtbox(controller.facing_x*sprite_width, 9, 26, 12, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed;
+		break;
+	}
+	
 }
 
 #region //physics values
@@ -82,6 +103,9 @@ function cancel_velocity_y(){
 				state_machine.state_change(1, 2);
 			}
 		}
+		else if (controller.input_a_pressed) {
+			state_machine.state_change(3, 0);
+		}
 		velocity_y += grav;
 		//apply velocity
 		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
@@ -92,6 +116,7 @@ function cancel_velocity_y(){
 		
 		//sound stuff
 		if(is_standing() and input_x!=0 and (state_machine.state_timer mod 8) == 0) obj_sound.play_sfx(sfx_footsteps);
+	
 	}
 	//1
 	function state_jump(){
@@ -133,7 +158,6 @@ function cancel_velocity_y(){
 			case 2:
 				if (is_standing() or is_riding(obj_solid)){
 					coyote_frames = coyote_max;
-					obj_camera.do_screenshake(2, 1);
 					state_machine.state_change(0);
 				}
 			
@@ -157,7 +181,35 @@ function cancel_velocity_y(){
 		x = respawn_x;
 		y = respawn_y;
 	}
+	//3
+	function state_ground_attack(){
+		if(state_machine.state_timer > input_window) state_machine.state_change(0);
+		var can_combo = (state_machine.state_timer > cancel_buffer and state_machine.state_timer);
+		switch state_machine.substate {
+			case 0:
+				if (state_machine.state_timer < 1) {
+					attack(0);
+				}
+				else if (can_combo and controller.input_a_pressed) {
+					state_machine.state_change(3, 1);
+				}
+			break;
+			case 1:
+				if (state_machine.state_timer < 1) {
+					attack(1);
+				}
+				else if (can_combo and controller.input_a_pressed) {
+					state_machine.state_change(3, 2);
+				}
+			break;
+			case 2:
+				if (state_machine.state_timer < 1) {
+					attack(2);
+				}
+			break;	
+		}
+	}
 #endregion
 
-state_machine = new StateMachine([state_run, state_jump, state_respawn], id);
+state_machine = new StateMachine([state_run, state_jump, state_respawn, state_ground_attack], id);
 state_machine.state_change(0);
