@@ -1,7 +1,7 @@
 event_inherited();
 
 #region //gameplay values
-hp = 5;
+hp = 3;
 #endregion
 
 #region //physics values
@@ -9,14 +9,17 @@ move_speed = 0.3;
 #endregion
 
 #region //ai
-target_range = 500;
+target_range = 100;
 #endregion
 
 take_damage = function(amount){
-	obj_camera.do_screenshake(10,1);
-	hp = clamp(hp-1, 0, hp_max);
-	if (hp==0){
-		state_machine.state_change(2);
+	if (i_frames_counter < 1) {
+		obj_camera.do_screenshake(10,1);
+		hp = clamp(hp-1, 0, hp_max);
+		if (hp==0){
+			state_machine.state_change(2);
+		}
+		i_frames_counter = i_frames;
 	}
 }
 attack = function(){
@@ -47,6 +50,9 @@ function state_search(){
 		state_machine.state_change(1);
 	}
 	
+	//count down i frames from hit
+	i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : 0;
+	
 	velocity_y += grav;
 	
 	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);	
@@ -61,6 +67,9 @@ function state_chase(){
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	chase();
+	
+	//count down i frames from hit
+	i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : 0;
 	
 	velocity_y += grav;
 	

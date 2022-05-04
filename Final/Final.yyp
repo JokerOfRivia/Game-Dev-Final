@@ -9,6 +9,7 @@
     {"id":{"name":"obj_debug_platform","path":"objects/obj_debug_platform/obj_debug_platform.yy",},"order":0,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":1,},
     {"id":{"name":"obj_enemy_example","path":"objects/obj_enemy_example/obj_enemy_example.yy",},"order":1,},
+    {"id":{"name":"spr_debug_slider","path":"sprites/spr_debug_slider/spr_debug_slider.yy",},"order":8,},
     {"id":{"name":"sfx_tomlow","path":"sounds/sfx_tomlow/sfx_tomlow.yy",},"order":8,},
     {"id":{"name":"sfx_button2","path":"sounds/sfx_button2/sfx_button2.yy",},"order":3,},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},"order":3,},

@@ -28,10 +28,22 @@ respawn_y = y;
 
 hp_max = 3;
 hp = hp_max;
+
+i_frames = 30;
+i_frames_counter = -1;
 #endregion
 
 function take_damage(amount){
-	hp = clamp(hp-1, 0, hp_max);
+	if (i_frames_counter < 1) {
+		obj_camera.do_screenshake(5, amount);
+		
+		hp = clamp(hp-1, 0, hp_max);
+		if(hp==0) {
+			state_machine.state_change(4);
+		}
+		
+		i_frames_counter = i_frames;
+	}
 }
 function attack(version){
 	switch version {
@@ -48,7 +60,6 @@ function attack(version){
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 	}
-	
 }
 
 #region //physics values
@@ -78,6 +89,9 @@ function cancel_velocity_x(){
 }
 function cancel_velocity_y(){
 	velocity_y = 0;
+}
+default_squish_action = function(){
+	state_machine.state_change(4);
 }
 
 #region //states
@@ -119,6 +133,8 @@ function cancel_velocity_y(){
 		//sound stuff
 		if(is_standing() and input_x!=0 and (state_machine.state_timer mod 8) == 0) obj_sound.play_sfx(sfx_footsteps);
 	
+		//count down i frames from hit
+		i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : -1;
 	}
 	//1
 	function state_jump(){
@@ -177,11 +193,20 @@ function cancel_velocity_y(){
 		
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
+		
+		//count down i frames from hit
+		i_frames_counter = (i_frames_counter > 0 ? i_frames_counter-1 : -1);
 	}
 	//2 (this is mostly a filler for now)
 	function state_respawn(){
 		x = respawn_x;
 		y = respawn_y;
+		
+		hp = hp_max;
+		
+		if (state_machine.state_timer > 100) {
+			state_machine.state_change(0);
+		}
 	}
 	//3
 	function state_ground_attack(){
@@ -223,8 +248,16 @@ function cancel_velocity_y(){
 				}
 			break;
 		}
+		//count down i frames from hit
+		i_frames_counter = (i_frames_counter > 0 ? i_frames_counter-1 : -1);
+	}
+	//4
+	function state_die(){
+		if (state_machine.state_timer > 120) {
+			state_machine.state_change(2);
+		}
 	}
 #endregion
 
-state_machine = new StateMachine([state_run, state_jump, state_respawn, state_ground_attack], id);
+state_machine = new StateMachine([state_run, state_jump, state_respawn, state_ground_attack, state_die], id);
 state_machine.state_change(0);

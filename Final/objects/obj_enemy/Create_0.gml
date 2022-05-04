@@ -9,6 +9,9 @@ is_riding = function(solid_id){
 #region //gameplay values
 hp_max = 3;
 hp = hp_max;
+
+i_frames = 25;
+i_frames_counter = -1;
 #endregion
 
 #region //physics values
@@ -37,7 +40,10 @@ function cancel_velocity_y(){
 
 //all enemies will inherit certain functions, but it's up to you to modify them in child objects
 take_damage = function(amount){
-	hp -= amount;
+	if (i_frames_counter < 1){
+		obj_camera.do_screenshake(6, amount);
+		hp -= amount;
+	}
 }
 attack = function(){
 	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 10, id, obj_player, 0);

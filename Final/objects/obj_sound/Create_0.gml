@@ -24,6 +24,11 @@ function set_sfx_volume(value){
 	audio_group_set_gain(ag_sfx, sfx_volume, 0);
 }
 
+function update(){
+	audio_group_set_gain(ag_sfx, sfx_volume, 0);
+	audio_group_set_gain(ag_ost, sfx_volume, 0);
+}
+
 function stop_music(){
 	audio_stop_sound(ost_current);
 	ost_current = -1;

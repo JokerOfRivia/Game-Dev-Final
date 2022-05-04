@@ -1,6 +1,6 @@
-draw_self();
 
-if (debug_mode) {
-	draw_set_font(fnt_pixelarribig);
-	draw_text(x, y-100, velocity_x);
+if (i_frames_counter > 15){
+	shader_set(shd_flash);
 }
+draw_self();
+shader_reset();

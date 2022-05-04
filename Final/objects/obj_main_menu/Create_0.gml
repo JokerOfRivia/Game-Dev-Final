@@ -34,8 +34,7 @@ function panel(x, y, width, height, elements) constructor {
 		}
 	}
 }
-
-function menu_button(x, y, width, height, sprite, text, callback, argument) constructor {
+function menu_element(x, y, width, height, sprite) {
 	self.x = x;
 	self.y = y;
 	self.width = width;
@@ -43,6 +42,11 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 	
 	self.sprite_index = sprite;
 	self.image_index = 0;
+	
+	static draw = function(highlighted){}
+	static step = function(){}
+}
+function menu_button(x, y, width, height, sprite, text, callback, argument) : menu_element(x, y, width, height, sprite) constructor {
 	
 	self.text = text;
 	
@@ -80,7 +84,42 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
 	};
 }
+function menu_slider(x, y, width, height, sprite, object, value, minval, maxval, callback) : menu_element(x, y, width, height, sprite) constructor {
+	self.minval = minval;
+	self.maxval = maxval;
+	range = abs(maxval-minval);
+	self.object = object;
+	self.value = value;
+	self.minval = minval;
+	self.maxval = maxval;
+	slidespeed = 0.01;
+	
+	static step = function(highlighted){
+		var rawval = variable_instance_get(object, "value");
+		if (obj_controller.input_left) {
+			variable_instance_set(object, "value", clamp(rawval - slidespeed, minval, maxval)); 
+		}
+		if (obj_controller.input_right) {
+			variable_instance_set(object, "value", clamp(rawval + slidespeed, minval, maxval)); 
+		}
+	}
+	static draw = function(highlighted){
+		
+		var rawval = variable_instance_get(object, "value");
+		var pos = (rawval - minval) / (range);
 
+		draw_rectangle_color(x,y,x+width, y+height, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, false);
+		var c = c_grey;
+		if (highlighted) c = c_white; 
+		draw_rectangle_color(x,y,x+(width*pos), y+height, c, c, c, c, false);
+		draw_sprite_stretched(self.sprite_index, self.image_index, self.x, self.y, width, height);
+		if (highlighted) draw_set_color(c_yellow);
+		draw_text(self.x + width/2, self.y + height/2, text);
+		draw_set_color(c_white);
+		
+		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
+	}
+}
 active_panel = 0;
 
 test_elements = ds_list_create();
@@ -92,10 +131,8 @@ ds_list_add(test_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "OP
 ds_list_add(test_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "QUIT", game_end,));
 //options
 ds_list_add(options_elements, new menu_button(48, 32, 40, 24, spr_debug_button, "Fullscreen", toggle_fullscreen,));
-ds_list_add(options_elements, new menu_button(48, 64, 40, 24, spr_debug_button, "Toggle Music", function(){
-	if (obj_sound.music_volume == 0.0) obj_sound.set_music_volume(1); else obj_sound.set_music_volume(0);
-	},));
-ds_list_add(options_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
+ds_list_add(options_elements, new menu_slider(48, 64, 64, 24, spr_debug_slider, obj_sound, "music_volume", 0, 1, obj_sound.update));
+ds_list_add(options_elements, new menu_button(48, 96, 40, 24, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
 
 panel_array = [new panel(16, 16, 200, 200, test_elements), new panel(16, 16, 200, 200, options_elements)];
 
