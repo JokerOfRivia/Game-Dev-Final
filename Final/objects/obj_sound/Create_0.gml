@@ -1,5 +1,7 @@
 audio_channel_num(16);
 
+if (debug_mode) audio_debug(true);
+
 music_priority = 15;
 sfx_priority = 0;
 
