@@ -1,3 +1,6 @@
+display_set_gui_size(320, 180);
+
+
 function panel(x, y, width, height, elements) constructor {
 	self.x = x;
 	self.y = y;
@@ -68,6 +71,7 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 	static draw = function(highlighted){
 		draw_set_font(fnt_retropc);
 		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
 		draw_sprite_stretched(self.sprite_index, self.image_index, self.x, self.y, width, height);
 		if (highlighted) draw_set_color(c_yellow);
 		draw_text(self.x + width/2, self.y + height/2, text);
@@ -83,16 +87,16 @@ test_elements = ds_list_create();
 options_elements = ds_list_create();
 
 //main
-ds_list_add(test_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "START", room_goto, rm_1));
-ds_list_add(test_elements, new menu_button(300, 350, 100, 80, spr_debug_button, "OPTIONS",  function(){active_panel = 1; obj_sound.play_sfx(sfx_button1);}, ));
-ds_list_add(test_elements, new menu_button(300, 500, 100, 80, spr_debug_button, "QUIT", game_end,));
+ds_list_add(test_elements, new menu_button(32, 32, 40, 24, spr_debug_button, "START", room_goto, rm_1));
+ds_list_add(test_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "OPTIONS",  function(){active_panel = 1; obj_sound.play_sfx(sfx_button1);}, ));
+ds_list_add(test_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "QUIT", game_end,));
 //options
-ds_list_add(options_elements, new menu_button(300, 200, 100, 80, spr_debug_button, "Fullscreen", toggle_fullscreen,));
-ds_list_add(options_elements, new menu_button(300, 350, 100, 80, spr_debug_button, "Toggle Music", function(){
+ds_list_add(options_elements, new menu_button(32, 32, 40, 24, spr_debug_button, "Fullscreen", toggle_fullscreen,));
+ds_list_add(options_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "Toggle Music", function(){
 	if (obj_sound.music_volume == 0.0) obj_sound.set_music_volume(1); else obj_sound.set_music_volume(0);
 	},));
-ds_list_add(options_elements, new menu_button(300, 500, 100, 80, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
+ds_list_add(options_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
 
-panel_array = [new panel(300, 300, 200, 200, test_elements), new panel(300, 300, 200, 200, options_elements)];
+panel_array = [new panel(16, 16, 200, 200, test_elements), new panel(16, 16, 200, 200, options_elements)];
 
 

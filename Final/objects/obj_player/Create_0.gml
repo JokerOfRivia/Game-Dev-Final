@@ -33,22 +33,23 @@ function take_damage(amount){
 #region //physics values
 velocity_x = 0;
 velocity_y = 0;
-velocity_max = 20;
+velocity_max = 10;
 
 //govern horizontal movement and gravity
-move_speed = 1.5;
+move_speed = 1;
 drag = 0.2;
-grav = 1.5;
+grav = 0.7;
 
 //these are used to track coyote time
 coyote_max = 5;
 coyote_frames = coyote_max;
 
 //main jump-related variables
-jump_accel = 5;
-jump_max = 5;
-peak_time = 10;
-peak_grav_coef = 0.5;
+jump_boost = 1.6;
+jump_accel = 1.4;
+jump_max = 6;
+peak_time = 12;
+peak_grav_coef = 0.4;
 #endregion
 
 function cancel_velocity_x(){
@@ -88,12 +89,18 @@ function cancel_velocity_y(){
 		
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
+		
+		//sound stuff
+		if(is_standing() and input_x!=0 and (state_machine.state_timer mod 8) == 0) obj_sound.play_sfx(sfx_footsteps);
 	}
 	//1
 	function state_jump(){
 		switch (state_machine.substate) {
 			//going up
 			case 0:
+				if (state_machine.state_timer < 1) {
+					velocity_y = -jump_boost;
+				}
 				if (controller.input_start_released or state_machine.state_timer == jump_max){
 					state_machine.substate = 1;
 				}

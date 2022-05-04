@@ -1,4 +1,3 @@
-
 switch (room) {
 	case rm_menu:
 		stop_music();
@@ -6,7 +5,7 @@ switch (room) {
 	break;
 	case rm_1:
 		stop_music();
-		set_music(ost_demo);
+		set_music(ost_antarctic);
 	break;
 }
 

@@ -1,3 +1,3 @@
 move(0, spd);
-if (y > room_height-100) spd = -4;
-if (y < 100) spd = 4;
+if (y > room_height-32) spd = -1;
+if (y < 200) spd = 1;

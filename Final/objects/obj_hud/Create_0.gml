@@ -98,7 +98,7 @@ function add_element(type, arguments) {
 }
 
 function initialize_debug_hud(){
-	add_element("hud_piece_counter", [100, 100, spr_debug_hud, 8, obj_player, "hp", false, spr_debug_hud2, "hp_max"]);
+	add_element("hud_piece_counter", [4, 4, spr_debug_hud, 8, obj_player, "hp", false, spr_debug_hud2, "hp_max"]);
 }
 
 initialize_debug_hud();

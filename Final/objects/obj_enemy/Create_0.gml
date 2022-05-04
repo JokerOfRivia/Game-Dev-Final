@@ -13,7 +13,7 @@ hp = 3;
 #region //physics values
 velocity_x = 0;
 velocity_y = 0;
-velocity_max = 20;
+velocity_max = 10;
 
 //govern horizontal movement and gravity
 move_speed = 1;
@@ -30,7 +30,7 @@ function cancel_velocity_y(){
 
 #region //ai
 	target = noone;
-	target_range = 150;
+	target_range = 24;
 #endregion
 
 
@@ -39,7 +39,7 @@ take_damage = function(amount){
 	hp = max(0, hp-amount);
 }
 attack = function(){
-	instance_create_hurtbox(64 * facing_x, 0, 64, 64, 10, id, obj_player, 0);
+	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 10, id, obj_player, 0);
 }
 get_target = function(){
 	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
@@ -50,7 +50,7 @@ get_target = function(){
 chase = function(){
 	if (target!=noone) {
 		var dir = (target.x - x);
-		if abs(dir) < 100 attack();
+		if abs(dir) < 12 attack();
 		velocity_x += (move_speed * sign(dir));
 	}
 }
