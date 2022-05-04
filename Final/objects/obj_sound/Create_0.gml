@@ -3,8 +3,8 @@ audio_channel_num(16);
 music_priority = 15;
 sfx_priority = 0;
 
-music_volume = 0.5;
-sfx_volume = 0.5;
+music_volume = 1;
+sfx_volume = 1;
 
 
 audio_group_load(ag_sfx);
@@ -15,12 +15,12 @@ audio_group_set_gain(ag_ost, music_volume, 0);
 ost_current = -1;
 
 function set_music_volume(value){
-	music_volume = clamp(value, 0, 1);
+	music_volume = clamp(value, 0.0, 1.0);
 	audio_group_set_gain(ag_ost, music_volume, 0);
 }
 
 function set_sfx_volume(value){
-	sfx_volume = clamp(value, 0, 1);
+	sfx_volume = clamp(value, 0.0, 1.0);
 	audio_group_set_gain(ag_sfx, sfx_volume, 0);
 }
 

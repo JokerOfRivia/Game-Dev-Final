@@ -133,6 +133,7 @@ function cancel_velocity_y(){
 			case 2:
 				if (is_standing() or is_riding(obj_solid)){
 					coyote_frames = coyote_max;
+					obj_camera.do_screenshake(2, 1);
 					state_machine.state_change(0);
 				}
 			

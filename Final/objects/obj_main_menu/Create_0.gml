@@ -77,7 +77,7 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) cons
 		draw_text(self.x + width/2, self.y + height/2, text);
 		draw_set_color(c_white);
 		
-		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index))
+		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
 	};
 }
 
@@ -91,8 +91,8 @@ ds_list_add(test_elements, new menu_button(32, 32, 40, 24, spr_debug_button, "ST
 ds_list_add(test_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "OPTIONS",  function(){active_panel = 1; obj_sound.play_sfx(sfx_button1);}, ));
 ds_list_add(test_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "QUIT", game_end,));
 //options
-ds_list_add(options_elements, new menu_button(32, 32, 40, 24, spr_debug_button, "Fullscreen", toggle_fullscreen,));
-ds_list_add(options_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "Toggle Music", function(){
+ds_list_add(options_elements, new menu_button(48, 32, 40, 24, spr_debug_button, "Fullscreen", toggle_fullscreen,));
+ds_list_add(options_elements, new menu_button(48, 64, 40, 24, spr_debug_button, "Toggle Music", function(){
 	if (obj_sound.music_volume == 0.0) obj_sound.set_music_volume(1); else obj_sound.set_music_volume(0);
 	},));
 ds_list_add(options_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
