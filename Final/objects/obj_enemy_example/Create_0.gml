@@ -1,11 +1,11 @@
 event_inherited();
 
 #region //gameplay values
-hp = 3;
+hp = 5;
 #endregion
 
 #region //physics values
-
+move_speed = 0.3;
 #endregion
 
 #region //ai
@@ -13,10 +13,14 @@ target_range = 500;
 #endregion
 
 take_damage = function(amount){
-	hp = max(0, hp-amount);
+	obj_camera.do_screenshake(10,1);
+	hp = clamp(hp-1, 0, hp_max);
+	if (hp==0){
+		state_machine.state_change(2);
+	}
 }
 attack = function(){
-	instance_create_hurtbox(64 * facing_x, 0, 64, 64, 10, id, obj_player, 0);
+	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 8, id, obj_player, 1);
 }
 get_target = function(){
 	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);

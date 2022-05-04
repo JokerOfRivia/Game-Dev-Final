@@ -16,8 +16,8 @@ function init(local_x, local_y, width, height, time, parent, target, damage){
 	self.local_x = local_x;
 	self.local_y = local_y;
 	
-	image_xscale = width/sprite_width;
-	image_yscale = height/sprite_height;
+	image_xscale = width;
+	image_yscale = height;
 	
 	self.time = time;
 	self.object = parent;
@@ -25,7 +25,10 @@ function init(local_x, local_y, width, height, time, parent, target, damage){
 }
 
 function step(){
-	if (time < 1) instance_destroy();
+	if ((!instance_exists(object) and object!=noone) or time < 1){
+		instance_destroy();
+		exit;
+	}
 	else {
 		if (object!=noone) {
 			x = object.x + local_x;

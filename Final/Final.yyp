@@ -39,6 +39,7 @@
     {"id":{"name":"sfx_test","path":"sounds/sfx_test/sfx_test.yy",},"order":0,},
     {"id":{"name":"ost_smalldarkroom","path":"sounds/ost_smalldarkroom/ost_smalldarkroom.yy",},"order":2,},
     {"id":{"name":"spr_debug_button","path":"sprites/spr_debug_button/spr_debug_button.yy",},"order":1,},
+    {"id":{"name":"spr_debug_hurtbox","path":"sprites/spr_debug_hurtbox/spr_debug_hurtbox.yy",},"order":7,},
     {"id":{"name":"obj_preload","path":"objects/obj_preload/obj_preload.yy",},"order":7,},
     {"id":{"name":"ost_antarctic","path":"sounds/ost_antarctic/ost_antarctic.yy",},"order":3,},
     {"id":{"name":"spr_debug_green","path":"sprites/spr_debug_green/spr_debug_green.yy",},"order":2,},

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_debug_red",
-    "path": "sprites/spr_debug_red/spr_debug_red.yy",
+    "name": "spr_debug_hurtbox",
+    "path": "sprites/spr_debug_hurtbox/spr_debug_hurtbox.yy",
   },
   "solid": false,
   "visible": false,

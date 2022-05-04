@@ -20,8 +20,8 @@ hp_max = 3;
 hp = hp_max;
 
 base_damage = 1;
-cancel_buffer = 1;
-input_window = 100;
+cancel_buffer = 16;
+input_window = 24;
 
 respawn_x = x;
 respawn_y = y;
@@ -31,21 +31,21 @@ hp = hp_max;
 #endregion
 
 function take_damage(amount){
-	hp = max(0, hp-amount);
+	hp = clamp(hp-1, 0, hp_max);
 }
 function attack(version){
 	switch version {
 		case 0:
-			instance_create_hurtbox(controller.facing_x*sprite_width -2, 8, 12, 13, cancel_buffer, id, obj_enemy, base_damage);
-			velocity_x += controller.facing_x * move_speed;
+			instance_create_hurtbox(controller.facing_x*sprite_width, -1, 12, 13, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(controller.facing_x*sprite_width -2, -4, 24, 13, cancel_buffer, id, obj_enemy, base_damage);
-			velocity_x += controller.facing_x * move_speed;
+			instance_create_hurtbox(controller.facing_x*sprite_width, 0, 24, 13, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
-			instance_create_hurtbox(controller.facing_x*sprite_width, 9, 26, 12, cancel_buffer, id, obj_enemy, base_damage);
-			velocity_x += controller.facing_x * move_speed;
+			instance_create_hurtbox(controller.facing_x*sprite_width, 1, 26, 12, cancel_buffer, id, obj_enemy, base_damage);
+			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 	}
 	
@@ -57,9 +57,9 @@ velocity_y = 0;
 velocity_max = 10;
 
 //govern horizontal movement and gravity
-move_speed = 1;
-drag = 0.2;
-grav = 0.7;
+move_speed = 0.6;
+drag = 0.25;
+grav = 0.6;
 
 //these are used to track coyote time
 coyote_max = 5;
@@ -67,10 +67,10 @@ coyote_frames = coyote_max;
 
 //main jump-related variables
 jump_boost = 1.6;
-jump_accel = 1.4;
-jump_max = 6;
+jump_accel = 1.3;
+jump_max = 8;
 peak_time = 12;
-peak_grav_coef = 0.4;
+peak_grav_coef = 0.5;
 #endregion
 
 function cancel_velocity_x(){
@@ -106,7 +106,9 @@ function cancel_velocity_y(){
 		else if (controller.input_a_pressed) {
 			state_machine.state_change(3, 0);
 		}
+		
 		velocity_y += grav;
+		
 		//apply velocity
 		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
 		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
@@ -183,8 +185,19 @@ function cancel_velocity_y(){
 	}
 	//3
 	function state_ground_attack(){
+		velocity_x = lerp(velocity_x, 0, drag);			
+		
+		velocity_y += grav;
+		
+		//apply velocity
+		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
+		
+		move_x(velocity_x, cancel_velocity_x);
+		move_y(velocity_y, cancel_velocity_y);
+		
 		if(state_machine.state_timer > input_window) state_machine.state_change(0);
-		var can_combo = (state_machine.state_timer > cancel_buffer and state_machine.state_timer);
+		var can_combo = (state_machine.state_timer > cancel_buffer and state_machine.state_timer < input_window);
 		switch state_machine.substate {
 			case 0:
 				if (state_machine.state_timer < 1) {
@@ -192,21 +205,23 @@ function cancel_velocity_y(){
 				}
 				else if (can_combo and controller.input_a_pressed) {
 					state_machine.state_change(3, 1);
+					attack(1);
 				}
 			break;
 			case 1:
 				if (state_machine.state_timer < 1) {
-					attack(1);
+					
 				}
 				else if (can_combo and controller.input_a_pressed) {
 					state_machine.state_change(3, 2);
+					attack(2);
 				}
 			break;
 			case 2:
 				if (state_machine.state_timer < 1) {
-					attack(2);
+					//attack(2);
 				}
-			break;	
+			break;
 		}
 	}
 #endregion
