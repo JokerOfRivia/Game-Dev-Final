@@ -45,6 +45,14 @@ function take_damage(amount){
 		i_frames_counter = i_frames;
 	}
 }
+
+function take_knockback(knockback_x, knockback_y){
+	if (i_frames_counter < 1) {
+		velocity_x += knockback_x;
+		velocity_y += knockback_y;
+	}
+}
+
 function attack(version){
 	switch version {
 		case 0:

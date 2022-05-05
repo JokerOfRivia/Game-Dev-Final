@@ -24,7 +24,7 @@ function panel(x, y, width, height, elements) constructor {
 			var do_highlight = (i == highlighted)? true: false;
 			elements[| i ].step(do_highlight);
 		}
-		if(obj_virtual_controller.input_a_pressed) {
+		if(obj_virtual_controller.input_a_released) {
 			elements[| highlighted ].on_press();
 			obj_sound.play_sfx(sfx_button3);
 		}
@@ -42,6 +42,7 @@ function panel(x, y, width, height, elements) constructor {
 		}
 	}
 }
+
 function menu_element(x, y, width, height, sprite) {
 	self.x = x;
 	self.y = y;
@@ -55,6 +56,7 @@ function menu_element(x, y, width, height, sprite) {
 	static step = function(){}
 	on_press = function(){}
 }
+
 function menu_label(x, y, width, height, sprite, text) : menu_element(x, y, width, height, sprite) constructor {
 	self.text = text;
 	self.is_label = true;
@@ -70,6 +72,7 @@ function menu_label(x, y, width, height, sprite, text) : menu_element(x, y, widt
 		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
 	}
 }
+
 function menu_button(x, y, width, height, sprite, text, callback, argument) : menu_element(x, y, width, height, sprite) constructor {
 	
 	self.text = text;
@@ -108,6 +111,64 @@ function menu_button(x, y, width, height, sprite, text, callback, argument) : me
 		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
 	};
 }
+
+function menu_keybind(x, y, width, height, sprite, key, value) : menu_element(x, y, width, height, sprite) constructor {
+	self.key = key;
+	self.value = value;
+	ready = false;
+	input = 0;
+	
+	on_press = function(){
+			if(ready == false) {
+				obj_sound.play_sfx(sfx_tomhigh);
+				ready = true;
+			}
+	}
+	static step = function(do_highlight){
+		if(ready) {
+			if (do_highlight) {
+				if (keyboard_key != 0) {
+					input = keyboard_key;
+					obj_sound.play_sfx(sfx_tomlow);
+					ready = false;
+					key = input;
+				}
+			}
+			else {
+				obj_sound.play_sfx(sfx_tomlow);
+				ready = false;
+				key = input;
+			}
+		}
+	}
+	static draw = function(do_highlight){
+		draw_sprite_stretched(sprite_index, image_index, x, y, width, height);
+		draw_set_font(fnt_retropc);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text(x + width/2, y + height/2, value);
+		if (ready) {	
+			draw_set_color(c_green);
+			draw_text(x+width*2, y, keytostring(input));
+			draw_set_color(c_white);
+		}
+		else if (do_highlight) {
+			draw_text(x, y, value);
+			draw_set_color(c_yellow);
+			draw_text(x+width*2, y, keytostring(key));
+			draw_set_color(c_white);
+		}
+		else {
+			draw_text(x, y, value);
+			draw_set_color(c_gray);
+			draw_text(x+width*2, y, keytostring(key));
+			draw_set_color(c_white);
+		}
+		
+		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
+	}
+}
+
 function menu_slider(x, y, width, height, sprite, object, value, minval, maxval, callback, label) : menu_element(x, y, width, height, sprite) constructor {
 	self.minval = minval;
 	self.maxval = maxval;
@@ -124,32 +185,38 @@ function menu_slider(x, y, width, height, sprite, object, value, minval, maxval,
 		if (highlighted) {
 			var rawval = variable_instance_get(object, value);
 			if (obj_virtual_controller.input_left_pressed) {
+				obj_sound.play_sfx(sfx_button3);
 				variable_instance_set(object, value, clamp(rawval - slidespeed, minval, maxval)); 
 				callback();
 			}
 			if (obj_virtual_controller.input_right_pressed) {
+				obj_sound.play_sfx(sfx_button3);
 				variable_instance_set(object, value, clamp(rawval + slidespeed, minval, maxval)); 
 				callback();
 			}
 		}
 	}
+	
 	static draw = function(highlighted){
 		
 		var rawval = variable_instance_get(object, value);
 		var pos = (rawval - minval) / (range);
 
-		draw_rectangle_color(x,y,x+width-1, y+height-1, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, false);
+		draw_rectangle_color(x+1, y+2, x+width-1, y+height-2, c_dkgrey, c_dkgrey, c_dkgrey, c_dkgrey, false);
 		var c = c_grey;
 		if (highlighted) c = c_white; 
-		draw_rectangle_color(x,y,x+(width*pos)-1, y+height, c, c, c, c, false);
+		draw_rectangle_color(x+1,y+2,x+(width*pos)-1, y+height-2, c, c, c, c, false);
 		draw_sprite_stretched(self.sprite_index, self.image_index, self.x, self.y, width, height);
 		
-		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
-		
+		if (highlighted) draw_set_color(c_yellow);
 		draw_text(x+width*2, y+4, text + ": " + string(rawval));
+		draw_set_color(c_white);
+		
+		self.image_index = wrap(self.image_index + 1, 0, sprite_get_number(self.sprite_index));
 	}
 	
 	on_press = function(){
+		obj_sound.play_sfx(sfx_button1);
 		var rawval = variable_instance_get(object, value);
 		var newval = (rawval == 0) ? 1.0: 0.0;
 		variable_instance_set(object, value, newval);
