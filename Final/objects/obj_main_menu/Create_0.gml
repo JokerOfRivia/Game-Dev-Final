@@ -8,7 +8,8 @@ credits_elements = ds_list_create();
 //main
 ds_list_add(main_elements, new menu_button(32, 32, 40, 24, spr_debug_button, "START", room_goto, rm_1));
 ds_list_add(main_elements, new menu_button(32, 64, 40, 24, spr_debug_button, "OPTIONS",  function(){active_panel = 1; obj_sound.play_sfx(sfx_button1);}, ));
-ds_list_add(main_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "QUIT", game_end,));
+ds_list_add(main_elements, new menu_button(32, 96, 40, 24, spr_debug_button, "CREDITS",  function(){active_panel = 3; obj_sound.play_sfx(sfx_button1);}, ));
+ds_list_add(main_elements, new menu_button(32, 128, 40, 24, spr_debug_button, "QUIT", game_end,));
 
 //options
 ds_list_add(options_elements, new menu_button(48, 10, 40, 24, spr_debug_button, "Fullscreen", toggle_fullscreen,));
@@ -28,7 +29,7 @@ ds_list_add(keybind_elements, new menu_keybind(200, 70, 40, 24, spr_debug_button
 ds_list_add(keybind_elements, new menu_keybind(200, 100, 40, 24, spr_debug_button, obj_virtual_controller.a, "a"));
 
 //credits
-ds_list_add(credits_elements, new menu_button(32, 10, 40, 24, spr_debug_button, "BACK", function(){active_panel = 1; obj_sound.play_sfx(sfx_button1);}, ));
+ds_list_add(credits_elements, new menu_button(32, 10, 40, 24, spr_debug_button, "BACK", function(){active_panel = 0; obj_sound.play_sfx(sfx_button1);}, ));
 ds_list_add(credits_elements, new menu_label(32, 32, room_width-32, room_height-32, spr_credits, ""));
 
 panel_array = [new panel(16, 16, 200, 200, main_elements), new panel(16, 16, 200, 200, options_elements)

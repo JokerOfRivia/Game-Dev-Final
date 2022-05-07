@@ -50,7 +50,7 @@ else {
 	input_normal_y = 0;
 }
 
-//keep the last direction inputted
+//keep the last direction input
 if (input_up_pressed) {facing_x = 0; facing_y = -1;}
 if (input_down_pressed) {facing_x = 0; facing_y = 1;}
 if (input_left_pressed) {facing_x = -1; facing_y = 0;}

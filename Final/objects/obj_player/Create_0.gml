@@ -21,8 +21,8 @@ hp = hp_max;
 
 base_damage = 1;
 base_knockback = 15;
-cancel_buffer = 16;
-input_window = 24;
+cancel_buffer = 10;
+input_window = 30;
 
 respawn_x = x;
 respawn_y = y;
@@ -55,17 +55,18 @@ function take_knockback(knockback_x, knockback_y){
 }
 
 function attack(version){
+	var attack_origin = (controller.facing_x == 1)? sprite_width: 0;
 	switch version {
 		case 0:
-			instance_create_hurtbox(controller.facing_x*sprite_width, -1, 12, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 12, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(controller.facing_x*sprite_width, 0, 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
-			instance_create_hurtbox(controller.facing_x*sprite_width, 1, 26, 12, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			instance_create_hurtbox(attack_origin, 1, controller.facing_x * 26, 12, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 	}
@@ -87,9 +88,9 @@ coyote_frames = coyote_max;
 
 //main jump-related variables
 jump_boost = 1.6;
-jump_accel = 1.3;
+jump_accel = 1.2;
 jump_max = 8;
-peak_time = 12;
+peak_time = 8;
 peak_grav_coef = 0.5;
 #endregion
 
@@ -220,7 +221,6 @@ default_squish_action = function(){
 	//3
 	function state_ground_attack(){
 		velocity_x = lerp(velocity_x, 0, drag);			
-		
 		velocity_y += grav;
 		
 		//apply velocity
@@ -230,33 +230,33 @@ default_squish_action = function(){
 		move_x(velocity_x, cancel_velocity_x);
 		move_y(velocity_y, cancel_velocity_y);
 		
-		if(state_machine.state_timer > input_window) state_machine.state_change(0);
-		var can_combo = (state_machine.state_timer > cancel_buffer and state_machine.state_timer < input_window);
+		var can_combo = ((state_machine.state_timer > cancel_buffer) 
+			and (state_machine.state_timer < input_window));
+		
 		switch state_machine.substate {
 			case 0:
-				if (state_machine.state_timer < 1) {
+				if (state_machine.state_timer < 2) {
 					attack(0);
 				}
 				else if (can_combo and controller.input_a_pressed) {
 					state_machine.state_change(3, 1);
-					attack(1);
 				}
 			break;
 			case 1:
-				if (state_machine.state_timer < 1) {
-					
+				if (state_machine.state_timer < 2) {
+					attack(1);
 				}
 				else if (can_combo and controller.input_a_pressed) {
 					state_machine.state_change(3, 2);
-					attack(2);
 				}
 			break;
 			case 2:
-				if (state_machine.state_timer < 1) {
-					//attack(2);
+				if (state_machine.state_timer < 2) {
+					attack(2);		
 				}
 			break;
 		}
+		if(state_machine.state_timer > input_window) state_machine.state_change(0);
 		//count down i frames from hit
 		i_frames_counter = (i_frames_counter > 0 ? i_frames_counter-1 : -1);
 	}
