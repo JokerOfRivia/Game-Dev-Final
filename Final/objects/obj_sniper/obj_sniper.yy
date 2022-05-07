@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_debug_blue",
-    "path": "sprites/spr_debug_blue/spr_debug_blue.yy",
+    "name": "spr_debug_sniper",
+    "path": "sprites/spr_debug_sniper/spr_debug_sniper.yy",
   },
   "solid": false,
   "visible": true,
