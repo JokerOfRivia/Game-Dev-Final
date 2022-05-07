@@ -17,7 +17,7 @@ i_frames_counter = -1;
 #region //physics values
 velocity_x = 0;
 velocity_y = 0;
-velocity_max = 10;
+velocity_max = 20;
 
 //govern horizontal movement and gravity
 move_speed = 1;
@@ -46,7 +46,7 @@ take_damage = function(amount){
 	}
 }
 attack = function(){
-	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 10, id, obj_player, 0);
+	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 10, id, obj_player, 0, 2*facing_x, -1);
 }
 get_target = function(){
 	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);

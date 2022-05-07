@@ -24,7 +24,7 @@ if (debug_mode) {
 #macro DOWN_DEFAULT				ord("S");
 #macro LEFT_DEFAULT				ord("A");
 #macro RIGHT_DEFAULT			ord("D");
-#macro START_DEFAULT			vk_space;
+#macro JUMP_DEFAULT			vk_space;
 #macro A_DEFAULT				ord("J");
 #macro B_DEFAULT				ord("K");
 #macro C_DEFAULT				ord("L");
@@ -34,7 +34,7 @@ up =							UP_DEFAULT;
 down =							DOWN_DEFAULT;
 left =							LEFT_DEFAULT;
 right =							RIGHT_DEFAULT;
-start =							START_DEFAULT;
+jump =							JUMP_DEFAULT;
 a =								A_DEFAULT;
 b =								B_DEFAULT;
 c =								C_DEFAULT;
@@ -48,3 +48,14 @@ input_normal_y = 0;
 
 facing_x = 0;
 facing_y = 0;
+
+function reset_config(){
+	up =							UP_DEFAULT;
+	down =							DOWN_DEFAULT;
+	left =							LEFT_DEFAULT;
+	right =							RIGHT_DEFAULT;
+	jump =							JUMP_DEFAULT;
+	a =								A_DEFAULT;
+	b =								B_DEFAULT;
+	c =								C_DEFAULT;
+}

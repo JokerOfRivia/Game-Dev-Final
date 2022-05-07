@@ -30,6 +30,7 @@
     {"id":{"name":"sfx_test2","path":"sounds/sfx_test2/sfx_test2.yy",},"order":1,},
     {"id":{"name":"shd_flash","path":"shaders/shd_flash/shd_flash.yy",},"order":0,},
     {"id":{"name":"sfx_progressscale","path":"sounds/sfx_progressscale/sfx_progressscale.yy",},"order":6,},
+    {"id":{"name":"spr_credits","path":"sprites/spr_credits/spr_credits.yy",},"order":1,},
     {"id":{"name":"shd_outline","path":"shaders/shd_outline/shd_outline.yy",},"order":1,},
     {"id":{"name":"ost_demo","path":"sounds/ost_demo/ost_demo.yy",},"order":0,},
     {"id":{"name":"ost_demo2","path":"sounds/ost_demo2/ost_demo2.yy",},"order":1,},

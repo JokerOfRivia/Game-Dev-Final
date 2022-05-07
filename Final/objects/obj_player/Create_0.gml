@@ -20,6 +20,7 @@ hp_max = 3;
 hp = hp_max;
 
 base_damage = 1;
+base_knockback = 15;
 cancel_buffer = 16;
 input_window = 24;
 
@@ -56,15 +57,15 @@ function take_knockback(knockback_x, knockback_y){
 function attack(version){
 	switch version {
 		case 0:
-			instance_create_hurtbox(controller.facing_x*sprite_width, -1, 12, 13, cancel_buffer, id, obj_enemy, base_damage);
+			instance_create_hurtbox(controller.facing_x*sprite_width, -1, 12, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(controller.facing_x*sprite_width, 0, 24, 13, cancel_buffer, id, obj_enemy, base_damage);
+			instance_create_hurtbox(controller.facing_x*sprite_width, 0, 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
-			instance_create_hurtbox(controller.facing_x*sprite_width, 1, 26, 12, cancel_buffer, id, obj_enemy, base_damage);
+			instance_create_hurtbox(controller.facing_x*sprite_width, 1, 26, 12, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 	}
@@ -73,7 +74,7 @@ function attack(version){
 #region //physics values
 velocity_x = 0;
 velocity_y = 0;
-velocity_max = 10;
+velocity_max = 20;
 
 //govern horizontal movement and gravity
 move_speed = 0.6;
@@ -110,7 +111,7 @@ default_squish_action = function(){
 		velocity_x += input_x;
 		
 		//jump button
-		if (controller.input_start_pressed) {
+		if (controller.input_jump_pressed) {
 			velocity_y = max(velocity_y, 0);
 			state_machine.state_change(1, 0);
 		}
@@ -152,7 +153,7 @@ default_squish_action = function(){
 				if (state_machine.state_timer < 1) {
 					velocity_y = -jump_boost;
 				}
-				if (controller.input_start_released or state_machine.state_timer == jump_max){
+				if (controller.input_jump_released or state_machine.state_timer == jump_max){
 					state_machine.substate = 1;
 				}
 				velocity_y -= jump_accel;

@@ -45,10 +45,10 @@ function step(){
 		if (n > 0){
 			for (var i = 0; i < n; ++i) {
 			    var hit_actor = hit_list[|i ];
-				hit_actor.take_damage(damage);
 				if (variable_instance_exists(hit_actor, "take_knockback")) {
 					hit_actor.take_knockback(knockback_x, knockback_y);
 				}
+				hit_actor.take_damage(damage);
 			}
 		}
 		ds_list_destroy(hit_list);

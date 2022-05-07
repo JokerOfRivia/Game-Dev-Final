@@ -2,6 +2,7 @@ event_inherited();
 
 #region //gameplay values
 hp = 3;
+base_knockback = 10;
 #endregion
 
 #region //physics values
@@ -23,7 +24,13 @@ take_damage = function(amount){
 	}
 }
 attack = function(){
-	instance_create_hurtbox(8 * facing_x, 0, 8, 8, 8, id, obj_player, 1);
+	if (state_machine.state_timer mod 60 == 0) instance_create_hurtbox(8 * facing_x, 0, 8, 8, 8, id, obj_player, 1, base_knockback * facing_x, -0.5 * base_knockback);
+}
+take_knockback = function(knockback_x, knockback_y){
+	if (i_frames_counter < 1) {
+		velocity_x+=knockback_x;
+		velocity_y+=knockback_y;
+	}
 }
 get_target = function(){
 	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
@@ -39,9 +46,14 @@ chase = function(){
 	}
 }
 
+
 #region //states
 //0
 function state_search(){
+	if (!is_standing()) {
+		state_machine.state_change(3);
+	}
+	
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	get_target();
@@ -64,12 +76,15 @@ function state_search(){
 
 //1
 function state_chase(){
+	if (!is_standing()) {
+		state_machine.state_change(3);
+	}
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	chase();
 	
 	if (place_meeting(x, y, obj_enemy_example)) {
-		velocity_x = -1;
+		velocity_x = -10;
 	}
 	else if (place_meeting(x + velocity_x, y, obj_enemy_example)) {
 		velocity_x = lerp(velocity_x, velocity_x*-1, drag);
@@ -97,7 +112,23 @@ function state_die(){
 	move_x(velocity_x, cancel_velocity_x);
 	move_y(velocity_y, cancel_velocity_y);
 }
+//3
+function state_air(){
+	if (is_standing()){
+		state_machine.state_change(0)
+	}
+	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
+	
+	move_x(velocity_x, cancel_velocity_x);
+	move_y(velocity_y, cancel_velocity_y);
+	
+	//count down i frames from hit
+	i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : 0;
+	
+	velocity_y += grav;
+}
 #endregion
 
-state_machine = new StateMachine([state_search, state_chase, state_die], id);
+state_machine = new StateMachine([state_search, state_chase, state_die, state_air], id);
 state_machine.state_change(0);
