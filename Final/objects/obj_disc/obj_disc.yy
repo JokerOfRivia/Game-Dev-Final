@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_disc",
-    "path": "sprites/spr_disc/spr_disc.yy",
+    "name": "spr_debug_disc",
+    "path": "sprites/spr_debug_disc/spr_debug_disc.yy",
   },
   "solid": false,
   "visible": true,
