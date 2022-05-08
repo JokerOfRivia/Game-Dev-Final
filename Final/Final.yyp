@@ -20,6 +20,7 @@
     {"id":{"name":"sfx_button2","path":"sounds/sfx_button2/sfx_button2.yy",},"order":3,},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},"order":3,},
     {"id":{"name":"obj_hurtbox","path":"objects/obj_hurtbox/obj_hurtbox.yy",},"order":4,},
+    {"id":{"name":"spr_finalboss","path":"sprites/spr_finalboss/spr_finalboss.yy",},"order":0,},
     {"id":{"name":"obj_main_menu","path":"objects/obj_main_menu/obj_main_menu.yy",},"order":0,},
     {"id":{"name":"obj_disc","path":"objects/obj_disc/obj_disc.yy",},"order":1,},
     {"id":{"name":"spr_player_right","path":"sprites/spr_player_right/spr_player_right.yy",},"order":0,},
