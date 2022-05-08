@@ -32,7 +32,7 @@
     "spriteId": {"name":"spr_debug_zombie","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 6.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
