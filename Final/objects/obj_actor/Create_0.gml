@@ -26,7 +26,8 @@ function collide_check(x_check, y_check){
 		return false;
 	}
 	else if (solid_check.oneway) {
-		return (is_standing());
+		if (solid_check.bbox_top < bbox_bottom) return false;
+		else return true;
 	}
 	else return place_meeting(x_check, y_check, solid_check);
 }

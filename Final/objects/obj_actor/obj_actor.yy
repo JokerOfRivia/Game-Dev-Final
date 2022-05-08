@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_debug_green",
-    "path": "sprites/spr_debug_green/spr_debug_green.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

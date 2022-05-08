@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_debug_zombie",
-    "path": "sprites/spr_debug_zombie/spr_debug_zombie.yy",
+    "name": "spr_zombie",
+    "path": "sprites/spr_zombie/spr_zombie.yy",
   },
   "solid": false,
   "visible": true,
