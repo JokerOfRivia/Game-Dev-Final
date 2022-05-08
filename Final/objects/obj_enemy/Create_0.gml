@@ -10,7 +10,7 @@ is_riding = function(solid_id){
 hp_max = 3;
 hp = hp_max;
 
-i_frames = 25;
+i_frames = 10;
 i_frames_counter = -1;
 #endregion
 

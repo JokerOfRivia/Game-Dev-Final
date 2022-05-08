@@ -39,8 +39,8 @@ hp = hp_max;
 
 base_damage = 1;
 base_knockback = 15;
-cancel_buffer = 10;
-input_window = 30;
+cancel_buffer = 5;
+input_window = 20;
 
 respawn_x = x;
 respawn_y = y;
@@ -103,17 +103,17 @@ velocity_max = 20;
 //govern horizontal movement and gravity
 move_speed = 0.6;
 drag = 0.25;
-grav = 0.6;
+grav = 1.2;
 
 //these are used to track coyote time
 coyote_max = 5;
 coyote_frames = coyote_max;
 
 //main jump-related variables
-jump_boost = 1.6;
-jump_accel = 1.2;
-jump_max = 8;
-peak_time = 8;
+jump_boost = 2.5;
+jump_accel = 2.0;
+jump_max = 6;
+peak_time = 6;
 peak_grav_coef = 0.5;
 #endregion
 
@@ -288,10 +288,10 @@ default_squish_action = function(){
 	}
 	//4
 	function state_die(){
-		if (state_machine.state_timer > 120) {
+		if (state_machine.state_timer > 60) {
 			state_machine.state_change(2);
 		}
-		i_frames_counter = -1;
+		i_frames_counter = 2;
 	}
 #endregion
 
