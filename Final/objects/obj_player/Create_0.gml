@@ -59,16 +59,20 @@ function attack(version){
 	var attack_origin = (controller.facing_x == 1)? sprite_width: 0;
 	switch version {
 		case 0:
-			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 16, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -1);
+			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 16, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*12, -4);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -1);
+			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*12, -4);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
 			instance_create_hurtbox(attack_origin, 1, controller.facing_x * 26, 12, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			velocity_x += controller.facing_x * move_speed * 10;
+		break;
+		case 3:
+			instance_create_hurtbox(attack_origin, 2, controller.facing_x * 16, 26, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			velocity_y -= jump_boost;
 		break;
 	}
 }
