@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_debug_red",
-    "path": "sprites/spr_debug_red/spr_debug_red.yy",
+    "name": "spr_bullet",
+    "path": "sprites/spr_bullet/spr_bullet.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_actorsolid",
-    "path": "objects/obj_actorsolid/obj_actorsolid.yy",
+    "name": "obj_actor",
+    "path": "objects/obj_actor/obj_actor.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -29,11 +29,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parent Objects",
-    "path": "folders/Objects/Essential/Parent Objects.yy",
+    "name": "Enemies",
+    "path": "folders/Objects/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_solid",
+  "name": "obj_bullet",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -190,3 +190,32 @@ function keytostring(key){
 		default:		return "key doesn't exist in this map"
 	}
 }
+
+function collision_line_first(x1, y1, x2, y2, object, prec, notme){
+	//CREDIT FOR THE FOLLOWING FUNCTION GOES TO XOT on gmslscripts.com!
+	/// GMLscripts.com/license
+    var ox,oy,dx,dy,object,prec,notme,sx,sy,inst,i;
+    ox = x1
+    oy = y2
+    dx = x2
+    dy = y2
+    sx = dx - ox;
+    sy = dy - oy;
+    inst = collision_line(ox,oy,dx,dy,object,prec,notme);
+    if (inst != noone) {
+        while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
+            sx /= 2;
+            sy /= 2;
+            i = collision_line(ox,oy,dx,dy,object,prec,notme);
+            if (i) {
+                dx -= sx;
+                dy -= sy;
+                inst = i;
+            } else {
+                dx += sx;
+                dy += sy;
+            }
+        }
+    }
+    return inst;
+}

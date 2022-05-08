@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "spr_debug_red",
-    "path": "sprites/spr_debug_red/spr_debug_red.yy",
-  },
+  "spriteId": null,
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_actorsolid",
-    "path": "objects/obj_actorsolid/obj_actorsolid.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -23,17 +17,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Parent Objects",
-    "path": "folders/Objects/Essential/Parent Objects.yy",
+    "name": "Essential",
+    "path": "folders/Objects/Essential.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_solid",
+  "name": "obj_actorsolid",
   "tags": [],
   "resourceType": "GMObject",
 }
