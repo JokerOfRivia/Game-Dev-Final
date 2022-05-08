@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_sniper",
-    "path": "sprites/spr_sniper/spr_sniper.yy",
+    "name": "spr_debug_explosion",
+    "path": "sprites/spr_debug_explosion/spr_debug_explosion.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_enemy",
-    "path": "objects/obj_enemy/obj_enemy.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -23,15 +20,18 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "name": "Essential",
+    "path": "folders/Objects/Essential.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_sniper",
+  "name": "obj_explosion",
   "tags": [],
   "resourceType": "GMObject",
 }

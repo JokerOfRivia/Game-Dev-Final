@@ -9,13 +9,13 @@
   "swfPrecision": 2.525,
   "bbox_left": 1,
   "bbox_right": 7,
-  "bbox_top": 1,
-  "bbox_bottom": 13,
+  "bbox_top": 0,
+  "bbox_bottom": 12,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 8,
-  "height": 16,
+  "height": 13,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},"LayerId":{"name":"41df1f64-7f0a-4e1f-a2ac-e5478740f3a4","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_debug_zombie","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},"resourceVersion":"1.0","name":"1def94df-b545-4253-ab56-67142e6b4119","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_zombie/spr_zombie.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_zombie/spr_zombie.yy",},"LayerId":{"name":"41df1f64-7f0a-4e1f-a2ac-e5478740f3a4","path":"sprites/spr_zombie/spr_zombie.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_zombie","path":"sprites/spr_zombie/spr_zombie.yy",},"resourceVersion":"1.0","name":"1def94df-b545-4253-ab56-67142e6b4119","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_debug_zombie","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},
+    "spriteId": {"name":"spr_zombie","path":"sprites/spr_zombie/spr_zombie.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 6.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"e4bc901a-6cbf-4bfd-a990-2210992cffc9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e4bc901a-6cbf-4bfd-a990-2210992cffc9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1def94df-b545-4253-ab56-67142e6b4119","path":"sprites/spr_zombie/spr_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_debug_zombie","path":"sprites/spr_debug_zombie/spr_debug_zombie.yy",},
+    "parent": {"name":"spr_zombie","path":"sprites/spr_zombie/spr_zombie.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_debug_zombie",
+    "name": "spr_zombie",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -69,11 +69,11 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Debug",
-    "path": "folders/Sprites/Debug.yy",
+    "name": "Final",
+    "path": "folders/Sprites/Final.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_debug_zombie",
+  "name": "spr_zombie",
   "tags": [],
   "resourceType": "GMSprite",
 }

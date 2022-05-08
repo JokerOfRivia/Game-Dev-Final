@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_debug_zombie",
-    "path": "sprites/spr_debug_zombie/spr_debug_zombie.yy",
+    "name": "spr_zombie",
+    "path": "sprites/spr_zombie/spr_zombie.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,6 +25,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

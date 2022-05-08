@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_sniper",
-    "path": "sprites/spr_sniper/spr_sniper.yy",
+    "name": "spr_debug_red",
+    "path": "sprites/spr_debug_red/spr_debug_red.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_enemy",
-    "path": "objects/obj_enemy/obj_enemy.yy",
+    "name": "obj_solid",
+    "path": "objects/obj_solid/obj_solid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,15 +23,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "name": "Debug",
+    "path": "folders/Objects/Debug.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_sniper",
+  "name": "obj_debug_oneway",
   "tags": [],
   "resourceType": "GMObject",
 }

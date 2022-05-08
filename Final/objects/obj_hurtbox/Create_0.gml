@@ -27,6 +27,8 @@ function init(local_x, local_y, width, height, time, parent, target, damage, kno
 	
 	self.knockback_x = knockback_x;
 	self.knockback_y = knockback_y;
+	
+	self.damage = damage;
 }
 
 function step(){

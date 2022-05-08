@@ -35,10 +35,11 @@ i_frames_counter = -1;
 #endregion
 
 function take_damage(amount){
-	if (i_frames_counter < 1) {
+	if (i_frames_counter < 1 and state_machine.state!=4) {
 		obj_camera.do_screenshake(5, amount);
 		
-		hp = clamp(hp-1, 0, hp_max);
+		hp = clamp(hp-amount, 0, hp_max);
+		
 		if(hp==0) {
 			state_machine.state_change(4);
 		}
@@ -58,11 +59,11 @@ function attack(version){
 	var attack_origin = (controller.facing_x == 1)? sprite_width: 0;
 	switch version {
 		case 0:
-			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 12, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 16, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -1);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -1);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
@@ -213,8 +214,11 @@ default_squish_action = function(){
 		y = respawn_y;
 		
 		hp = hp_max;
+		i_frames_counter = 0;
+		velocity_x = 0;
+		velocity_y = 0;
 		
-		if (state_machine.state_timer > 100) {
+		if (state_machine.state_timer > 50) {
 			state_machine.state_change(0);
 		}
 	}
@@ -265,6 +269,7 @@ default_squish_action = function(){
 		if (state_machine.state_timer > 120) {
 			state_machine.state_change(2);
 		}
+		i_frames_counter = -1;
 	}
 #endregion
 

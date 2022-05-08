@@ -10,34 +10,42 @@ function panel(x, y, width, height, elements) constructor {
 	self.height = height;
 	
 	self.elements = elements;
+	size = ds_list_size(elements);
 	
 	self.highlighted = 0;
+	locked = false;
+	
+	for(i = 0; i < size; i++) {
+		elements[|i ].parent_panel = self;
+	}
 	
 	static draw = function(){
-		for (var i = 0; i < ds_list_size(elements); ++i) {
+		for (var i = 0; i < size; ++i) {
 			var do_highlight = (i == highlighted)? true: false;
 			elements[| i ].draw(do_highlight);
 		}
 	}
 	static step = function(){
-		for (var i = 0; i < ds_list_size(elements); ++i) {
+		for (var i = 0; i < size; ++i) {
 			var do_highlight = (i == highlighted)? true: false;
 			elements[| i ].step(do_highlight);
 		}
-		if(obj_virtual_controller.input_a_released) {
-			elements[| highlighted ].on_press();
-			obj_sound.play_sfx(sfx_button3);
-		}
-		else {
-			if(obj_virtual_controller.input_down_pressed) {
-				obj_sound.play_sfx(sfx_button2);
-				var n = 1;
-				highlighted = wrap(highlighted + n, 0, ds_list_size(elements))
+		if (!locked) {
+			if(obj_virtual_controller.input_a_pressed) {
+				elements[| highlighted ].on_press();
+				obj_sound.play_sfx(sfx_button3);
 			}
-			if(obj_virtual_controller.input_up_pressed) {
-				obj_sound.play_sfx(sfx_button2);
-				var n = -1;
-				highlighted = wrap(highlighted + n, 0, ds_list_size(elements))
+			else {
+				if(obj_virtual_controller.input_down_pressed) {
+					obj_sound.play_sfx(sfx_button2);
+					var n = 1;
+					highlighted = wrap(highlighted + n, 0, size)
+				}
+				if(obj_virtual_controller.input_up_pressed) {
+					obj_sound.play_sfx(sfx_button2);
+					var n = -1;
+					highlighted = wrap(highlighted + n, 0, size)
+				}
 			}
 		}
 	}
@@ -51,6 +59,7 @@ function menu_element(x, y, width, height, sprite) {
 	is_label = false;
 	self.sprite_index = sprite;
 	self.image_index = 0;
+	parent_panel = -1;
 	
 	static draw = function(highlighted){}
 	static step = function(){}
@@ -118,26 +127,29 @@ function menu_keybind(x, y, width, height, sprite, key, value) : menu_element(x,
 	ready = false;
 	input = 0;
 	
-	on_press = function(){
-			if(ready == false) {
+	on_press = function() {
+			if (ready == false) {
 				obj_sound.play_sfx(sfx_tomhigh);
+				parent_panel.locked = true;
 				ready = true;
+				keyboard_lastkey = 0;
 			}
 	}
-	static step = function(do_highlight){
-		if(ready) {
-			if (do_highlight) {
-				if (keyboard_key != 0) {
-					input = keyboard_key;
-					obj_sound.play_sfx(sfx_tomlow);
-					ready = false;
-					key = input;
+	static step = function(do_highlight) {
+		if (do_highlight) {
+			if(ready) {
+				if (keyboard_lastkey != 0) {
+					input = keyboard_lastkey;
+					if (keyboard_check_pressed(input)) {
+						key = input;
+					}
+					if keyboard_check_released(input) {
+						obj_sound.play_sfx(sfx_tomlow);
+						variable_instance_set(obj_virtual_controller, value, input);
+						ready = false;
+						parent_panel.locked = false;
+					}
 				}
-			}
-			else {
-				obj_sound.play_sfx(sfx_tomlow);
-				ready = false;
-				key = input;
 			}
 		}
 	}
@@ -159,7 +171,7 @@ function menu_keybind(x, y, width, height, sprite, key, value) : menu_element(x,
 		}
 		else {
 			draw_set_color(c_gray);
-			draw_text(x+width*2, y  + height/2, keytostring(key));
+			draw_text(x+width*2, y + height/2, keytostring(variable_instance_get(obj_virtual_controller, value)));
 			draw_set_color(c_white);
 		}
 		
