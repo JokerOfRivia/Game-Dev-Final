@@ -15,6 +15,7 @@ if (debug_mode) {
 //THIS IS HEAVILY BASED ON THE SYSTEM MADDIE THORSON USED IN CELESTE/TOWERFALL!
 //REFER TO THIS FOR CREDIT! https://maddythorson.medium.com/celeste-and-towerfall-physics-d24bd2ae0fc5
 collidable = true;
+oneway = false;
 
 function move(x_dis, y_dis){
 	collidable = false;

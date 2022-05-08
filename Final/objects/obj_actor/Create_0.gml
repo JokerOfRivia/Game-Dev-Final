@@ -25,6 +25,9 @@ function collide_check(x_check, y_check){
 	if (solid_check==-4 or solid_check.collidable==false) {
 		return false;
 	}
+	else if (solid_check.oneway) {
+		return (is_standing());
+	}
 	else return place_meeting(x_check, y_check, solid_check);
 }
 //override in child objects if they have some certain condition for riding a solid
