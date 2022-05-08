@@ -77,8 +77,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Final",
-    "path": "folders/Sprites/Final.yy",
+    "name": "Zombie",
+    "path": "folders/Sprites/Final/Zombie.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_zombie",

@@ -229,8 +229,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Debug",
-    "path": "folders/Sprites/Debug.yy",
+    "name": "UI",
+    "path": "folders/Sprites/Final/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_debug_button",

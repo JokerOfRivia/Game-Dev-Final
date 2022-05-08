@@ -15,6 +15,24 @@ is_riding = function(solid_id){
 
 controller = obj_virtual_controller;
 
+#region sprites
+sprite_default = spr_player;
+//left
+sprite_air_attack = spr_player_air_attack_left;
+sprite_fall_left = spr_player_fall_left;
+sprite_ground_attack_left = spr_player_ground_attack_left;
+sprite_hit_left = spr_player_hit_left;
+sprite_jump_left = spr_player_jump_left;
+
+/*right
+sprite_air_attack = spr_player_air_attack_right;
+sprite_fall_right = spr_player_fall_right;
+sprite_ground_attack_right = spr_player_ground_attack_right;
+sprite_hit_right = spr_player_hit_right;
+sprite_jump_right = spr_player_jump_right;
+*/
+#endregion
+
 #region //gameplay vals
 hp_max = 3;
 hp = hp_max;
