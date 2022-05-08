@@ -14,6 +14,7 @@
     {"id":{"name":"obj_sniper","path":"objects/obj_sniper/obj_sniper.yy",},"order":2,},
     {"id":{"name":"spr_debug_sniper","path":"sprites/spr_debug_sniper/spr_debug_sniper.yy",},"order":0,},
     {"id":{"name":"sfx_tomlow","path":"sounds/sfx_tomlow/sfx_tomlow.yy",},"order":8,},
+    {"id":{"name":"spr_debug_weapon","path":"sprites/spr_debug_weapon/spr_debug_weapon.yy",},"order":10,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":3,},
     {"id":{"name":"sfx_button2","path":"sounds/sfx_button2/sfx_button2.yy",},"order":3,},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},"order":3,},
