@@ -38,9 +38,9 @@ hp_max = 3;
 hp = hp_max;
 
 base_damage = 1;
-base_knockback = 15;
+base_knockback = 8;
 cancel_buffer = 5;
-input_window = 20;
+input_window = 15;
 
 respawn_x = x;
 respawn_y = y;
@@ -48,7 +48,7 @@ respawn_y = y;
 hp_max = 3;
 hp = hp_max;
 
-i_frames = 30;
+i_frames = 20;
 i_frames_counter = -1;
 #endregion
 
@@ -101,7 +101,7 @@ velocity_y = 0;
 velocity_max = 20;
 
 //govern horizontal movement and gravity
-move_speed = 0.6;
+move_speed = 0.8;
 drag = 0.25;
 grav = 1.2;
 
