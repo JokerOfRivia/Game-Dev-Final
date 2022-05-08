@@ -33,7 +33,7 @@ take_knockback = function(knockback_x, knockback_y){
 	}
 }
 get_target = function(){
-	var hit = collision_line(x-target_range, y+(sprite_height/2), x+target_range, y+(sprite_height/2), obj_player, false, false);
+	var hit = collision_line(x - target_range, y+(sprite_height/2), x + target_range, y+(sprite_height/2), obj_player, false, false);
 	if (hit!=noone) {
 		target = hit;	
 	}

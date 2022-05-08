@@ -7,7 +7,7 @@ if (debug_mode){
 	visible = true;
 }
 
-function init(x, y, radius, time, parent, target, damage, knockback){
+function init(x, y, radius, time, target, damage, knockback){
 	self.x = x;
 	self.y = y;
 	
@@ -16,7 +16,7 @@ function init(x, y, radius, time, parent, target, damage, knockback){
 	
 	self.time = time;
 	self.target = target;
-	
+	self.damage = damage;
 	self.knockback = knockback;
 }
 

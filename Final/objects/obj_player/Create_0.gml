@@ -38,7 +38,8 @@ function take_damage(amount){
 	if (i_frames_counter < 1) {
 		obj_camera.do_screenshake(5, amount);
 		
-		hp = clamp(hp-1, 0, hp_max);
+		hp = clamp(hp-amount, 0, hp_max);
+		
 		if(hp==0) {
 			state_machine.state_change(4);
 		}
@@ -265,6 +266,7 @@ default_squish_action = function(){
 		if (state_machine.state_timer > 120) {
 			state_machine.state_change(2);
 		}
+		i_frames_counter = -1;
 	}
 #endregion
 

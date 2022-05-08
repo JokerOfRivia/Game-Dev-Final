@@ -18,7 +18,7 @@ get_target = function(){
 chase = function(){
 	if (target!=noone) {
 		var dir = (target.x - x);
-		if abs(dir) < 100 attack();
+		if (abs(dir) < attack_range) attack();
 		velocity_x += (move_speed * sign(dir));
 	}
 } 
@@ -27,8 +27,11 @@ chase = function(){
 hp_max = 1;
 hp = hp_max;
 
+target_range = 100;
+attack_range = 12;
+
 explode_timer = 80;
-explode_radius = 80;
+explode_radius = 12;
 #endregion
 
 #region //physics values
@@ -37,7 +40,7 @@ velocity_y = 0;
 velocity_max = 20;
 
 //govern horizontal movement and gravity
-move_speed = 2;
+move_speed = 1.1;
 drag = 0.4;
 grav = 1.5;
 #endregion
@@ -100,8 +103,10 @@ function state_chase(){
 
 //2
 function state_die(){
-	if (state_timer > explode_timer) {
-		instance_create_explosion(x+sprite_width/2, y+sprite_height, explode_radius, 30, obj_actor, 2, 10);
+	velocity_x = lerp(velocity_x, 0, drag);	
+	
+	if (state_machine.state_timer > explode_timer) {
+		instance_create_explosion(x+sprite_width/2, y+sprite_height+2, explode_radius, 30, obj_actor, 2, 10);
 		instance_destroy();
 	}
 	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
