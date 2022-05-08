@@ -84,11 +84,9 @@ function state_chase(){
 	chase();
 	
 	if (place_meeting(x, y, obj_enemy_example)) {
-		velocity_x = -1*instance_place(x, y, obj_enemy_example);
+		velocity_x = -0.5*instance_place(x, y, obj_enemy_example).velocity_x;
 	}
-	else if (place_meeting(x + velocity_x, y, obj_enemy_example)) {
-		velocity_x = lerp(0, velocity_x*-1, drag);
-	}
+	
 	
 	//count down i frames from hit
 	i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : 0;

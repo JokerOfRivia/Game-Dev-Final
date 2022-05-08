@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_hurtbox",
+  "name": "scr_initiate_damagers",
   "tags": [],
   "resourceType": "GMScript",
 }
