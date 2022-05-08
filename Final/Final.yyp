@@ -53,6 +53,7 @@
     {"id":{"name":"spr_disc","path":"sprites/spr_disc/spr_disc.yy",},"order":0,},
     {"id":{"name":"sfx_test","path":"sounds/sfx_test/sfx_test.yy",},"order":0,},
     {"id":{"name":"spr_player_air_attack_left","path":"sprites/spr_player_air_attack_left/spr_player_air_attack_left.yy",},"order":6,},
+    {"id":{"name":"spr_finalboss_atk_left","path":"sprites/spr_finalboss_atk_left/spr_finalboss_atk_left.yy",},"order":1,},
     {"id":{"name":"ost_smalldarkroom","path":"sounds/ost_smalldarkroom/ost_smalldarkroom.yy",},"order":2,},
     {"id":{"name":"spr_debug_button","path":"sprites/spr_debug_button/spr_debug_button.yy",},"order":1,},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},"order":1,},
