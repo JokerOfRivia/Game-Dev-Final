@@ -1,5 +1,10 @@
 event_inherited();
 
+#region //sprites
+sprite_right = 
+sprite_left = 
+#endregion
+
 #region //gameplay values
 hp_max = 2;
 hp = hp_max;
@@ -19,44 +24,53 @@ drag = 0.4;
 grav = 1.5;
 
 //gun
-bullet_speed = 10;
+bullet_speed = 5;
 bullet_damage = 1;
 bullet_knockback = 3;
+reload_time = 80;
 #endregion
 
 #region //ai
 	target = noone;
 	target_range = 200;
 	maintain_distance = 64;
-	search_timer = 20;
+	search_timer = 80;
 #endregion
 
 take_knockback = function(knockback_x, knockback_y){
 	if (i_frames_counter < 1) {
-		velocity_x+=knockback_x;
-		velocity_y+=knockback_y;
+		velocity_x+=knockback_x/2;
+		velocity_y+=knockback_y/2;
 	}
 }
-attack = function(angle){
-	instance_create_bullet(x + 8*dcos(angle), y + 8*dsin(angle), angle, bullet_speed, 1, obj_player, bullet_damage, bullet_knockback);
+
+attack = function(angle) {
+	var center_x = (x + sprite_width/2);
+	var center_y = (y + sprite_height/2) - 4;
+	
+	instance_create_bullet(center_x, center_y, angle, bullet_speed, 1, target, bullet_damage, bullet_knockback);
 }
-get_target = function(){
-	var hit = ds_list_create()
-	collision_line_list(x, y, obj_player.x, obj_player.y, obj_actorsolid, true, true, hit, true);
-	if (hit[| 0]==obj_player) {
-		target = hit;
+
+get_target = function() {
+	if (!collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false)) {
+		target = obj_player;
 	}
-	ds_list_destroy(hit);
 }
-chase = function(){
-	if (target!=noone) {	
-		var dir_x = (target.x - x);
-		var dir_y = (target.y - y);
-		var distance = magnitude(dir_x, dir_y);
-		var angle = darctan2(dir_y, dir_x);
+
+chase = function() {
+	if (target!=noone) {
+		var target_center_x = (target.x + target.sprite_width/2);
+		var center_x = (x + sprite_width/2);
 		
-		if target = collision_line_first(x, y, target.x, target.y, obj_actorsolid, false, true) {
-			attack(angle);
+		var target_center_y = (target.y + target.sprite_height/2);
+		var center_y = (y + sprite_height/2) - 4;
+		
+		var angle = point_direction(center_x, center_y, target_center_x, target_center_y);
+		
+		if (!collision_line(center_x, center_y, target_center_x, target_center_y, obj_solid, false, false)) {
+			if ((state_machine.state_timer mod reload_time == 0) or state_machine.state_timer == reload_time/10) {
+				attack(angle);
+			}
 		}
 		else state_machine.state_change(2);
 	}
@@ -111,6 +125,9 @@ function state_chase(){
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	if (state_machine.state_timer < search_timer) {
+		if (!collision_line(x, y, target.x, target.y, obj_solid, false, false)) {
+			state_machine.state_change(1);
+		}
 		velocity_x = move_speed * sign(target.x - x);
 	}
 	else {
@@ -130,6 +147,8 @@ function state_die(){
 	
 	move_x(velocity_x, cancel_velocity_x);
 	move_y(velocity_y, cancel_velocity_y);
+	
+	move_and_iframes();
 }
 //4
 function state_air(){

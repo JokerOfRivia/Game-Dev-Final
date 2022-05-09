@@ -12,7 +12,6 @@ is_riding = function(solid_id){
 	else return false
 }
 
-
 controller = obj_virtual_controller;
 
 #region sprites
@@ -164,7 +163,7 @@ default_squish_action = function(){
 		move_y(velocity_y, cancel_velocity_y);
 		
 		//sound stuff
-		if(is_standing() and input_x!=0 and (state_machine.state_timer mod 8) == 0) obj_sound.play_sfx(sfx_footsteps);
+		if(is_standing() and input_x!=0 and (state_machine.state_timer mod 4) == 0) obj_sound.play_sfx(sfx_footsteps);
 	
 		//count down i frames from hit
 		i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : -1;

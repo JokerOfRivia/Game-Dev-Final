@@ -21,8 +21,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Essential",
-    "path": "folders/Objects/Essential.yy",
+    "name": "Parent Objects",
+    "path": "folders/Objects/Essential/Parent Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_actorsolid",

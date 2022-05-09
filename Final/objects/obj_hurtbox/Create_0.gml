@@ -42,15 +42,21 @@ function step(){
 			y = object.y + local_y;
 		}
 		
+		var hit_bullet = instance_place(x, y, obj_bullet);
+		if (hit_bullet!=noone) {
+					hit_bullet.deflect(obj_enemy);
+		}
+		
 		var hit_list = ds_list_create();
 		var n = instance_place_list(x, y, target, hit_list, false);
 		if (n > 0){
 			for (var i = 0; i < n; ++i) {
 			    var hit_actor = hit_list[|i ];
+				
 				if (variable_instance_exists(hit_actor, "take_knockback")) {
 					hit_actor.take_knockback(knockback_x, knockback_y);
 				}
-				hit_actor.take_damage(damage);
+				if (variable_instance_exists(hit_actor, "take_damage")) hit_actor.take_damage(damage);
 			}
 		}
 		ds_list_destroy(hit_list);

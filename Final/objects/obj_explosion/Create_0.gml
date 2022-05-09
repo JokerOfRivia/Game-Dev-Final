@@ -45,7 +45,7 @@ function step(){
 					
 					hit_actor.take_knockback(kb_x, kb_y);
 				}
-				hit_actor.take_damage(damage);
+				if (variable_instance_exists(hit_actor, "take_damage")) hit_actor.take_damage(damage);
 			}
 		}
 		ds_list_destroy(hit_list);
