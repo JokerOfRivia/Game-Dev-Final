@@ -121,8 +121,8 @@ function attack(version){
 		case 3:
 			var attack_box = instance_create_hurtbox(attack_origin, 2, controller.facing_x * 16, 26, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			attack_box.callback = function() {
-				velocity = -jump_boost/2;
-				state_machine.state_change(1, 1);
+				
+				state_machine.state_change(1, 0);
 			}
 			velocity_y -= jump_boost;
 		break;

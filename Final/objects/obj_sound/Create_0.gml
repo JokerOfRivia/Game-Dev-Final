@@ -1,8 +1,8 @@
-audio_channel_num(16);
+audio_channel_num(128);
 
 if (debug_mode) audio_debug(true);
 
-music_priority = 15;
+music_priority = 120;
 sfx_priority = 0;
 
 music_volume = 1;
@@ -44,5 +44,5 @@ function set_music(ost_id){
 function play_sfx(sfx_id){
 	audio_play_sound(sfx_id, sfx_priority, false);
 	
-	sfx_priority = wrap(sfx_priority+1, 0, music_priority-1);
+	sfx_priority = wrap(sfx_priority+1, 0, 15);
 }
