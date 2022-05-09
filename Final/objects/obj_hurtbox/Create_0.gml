@@ -1,4 +1,3 @@
-time = 0;
 parent = noone;
 target = noone;
 damage = 0;

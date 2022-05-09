@@ -65,6 +65,8 @@ else if (controller.facing_x == 1) {
 	sprite_index = sprite_right_array[sprite_subdex];
 }
 
+
+
 draw_self();
 
 shader_reset();

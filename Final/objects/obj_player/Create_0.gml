@@ -121,10 +121,10 @@ function attack(version){
 		case 3:
 			var attack_box = instance_create_hurtbox(attack_origin, 2, controller.facing_x * 16, 26, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
 			attack_box.callback = function() {
-				
 				state_machine.state_change(1, 0);
+				state_machine.state_timer = jump_max div 2;
 			}
-			velocity_y -= jump_boost;
+			velocity_y = -grav;
 		break;
 	}
 }
@@ -157,8 +157,8 @@ function cancel_velocity_x(){
 function cancel_velocity_y(){
 	velocity_y = 0;
 }
-default_squish_action = function(){
-	state_machine.state_change(4);
+squish_move_action = function(){
+	state_machine.state_change(2);
 }
 
 #region //states
@@ -170,7 +170,7 @@ default_squish_action = function(){
 		var input_x = move_speed * controller.input_normal_x;
 		velocity_x += input_x;
 		
-		if (velocity_x != 0) sprite_subdex = 8;
+		if (input_x != 0) sprite_subdex = 8;
 		
 		//jump button
 		if (controller.input_jump_pressed) {
@@ -280,6 +280,10 @@ default_squish_action = function(){
 	}
 	//2 (this is mostly a filler for now)
 	function state_respawn(){
+		if (state_machine.state_timer < 1) {
+			obj_sound.play_sfx(sfx_progressscale);
+		}
+		
 		x = respawn_x;
 		y = respawn_y;
 		

@@ -31,8 +31,7 @@ default_squish_action = instance_destroy;
 	target = obj_player;
 #endregion
 
-hurtbox = instance_create_hurtbox(x-2, y+8, sprite_width+2, sprite_height-8, -1000, id, target, 0, -6);
-
+hurtbox = instance_create_hurtbox(x-2, y+8, sprite_width+2, sprite_height-8, -100, id, target, 0, -6);
 
 take_damage = function(amount){
 	if (i_frames_counter < 1){
