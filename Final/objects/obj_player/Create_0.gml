@@ -16,20 +16,46 @@ controller = obj_virtual_controller;
 
 #region sprites
 sprite_default = spr_player;
-//left
-sprite_air_attack = spr_player_air_attack_left;
-sprite_fall_left = spr_player_fall_left;
-sprite_ground_attack_left = spr_player_ground_attack_left;
-sprite_hit_left = spr_player_hit_left;
-sprite_jump_left = spr_player_jump_left;
+sprite_subdex = 5;
 
-/*right
-sprite_air_attack = spr_player_air_attack_right;
+//left
+//0
+sprite_air_attack_left = spr_player_air_attack_left;
+//1
+sprite_fall_left = spr_player_fall_left;
+//2
+sprite_ground_attack_left = spr_player_ground_attack_left;
+//3
+sprite_ground_attack2_left = spr_player_ground_attack2_left;
+//4
+sprite_ground_attack3_left = spr_player_ground_attack3_left;
+//5
+sprite_hit_left = spr_player_hit_left;
+//6
+sprite_idle_left = spr_player_idle_left;
+//7
+sprite_jump_left = spr_player_jump_left;
+//8
+sprite_walk_left = spr_player_walk_left;
+
+sprite_left_array = [sprite_air_attack_left, sprite_fall_left, sprite_ground_attack_left, sprite_ground_attack2_left, 
+	sprite_ground_attack3_left, sprite_hit_left, sprite_idle_left, sprite_jump_left, sprite_walk_left];
+
+
+//right
+sprite_air_attack_right = spr_player_air_attack_right;
 sprite_fall_right = spr_player_fall_right;
 sprite_ground_attack_right = spr_player_ground_attack_right;
+sprite_ground_attack2_right = spr_player_ground_attack2_right;
+sprite_ground_attack3_right = spr_player_ground_attack3_right;
 sprite_hit_right = spr_player_hit_right;
+sprite_idle_right = spr_player_idle_right;
 sprite_jump_right = spr_player_jump_right;
-*/
+sprite_walk_right = spr_player_walk_right;
+
+sprite_right_array = [sprite_air_attack_right, sprite_fall_right, sprite_ground_attack_right, sprite_ground_attack2_right, 
+	sprite_ground_attack3_right, sprite_hit_right, sprite_idle_right, sprite_jump_right, sprite_walk_right];
+
 #endregion
 
 #region //gameplay vals
@@ -69,6 +95,7 @@ function take_knockback(knockback_x, knockback_y){
 	if (i_frames_counter < 1) {
 		velocity_x += knockback_x;
 		velocity_y += knockback_y;
+		sprite_subdex = 5;
 	}
 }
 
@@ -76,19 +103,26 @@ function attack(version){
 	var attack_origin = (controller.facing_x == 1)? sprite_width: 0;
 	switch version {
 		case 0:
-			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 16, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*12, -4);
+			sprite_subdex = 2;
+			instance_create_hurtbox(attack_origin, -1, controller.facing_x * 16, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -4);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 1:
-			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*12, -4);
+			sprite_subdex = 3;
+			instance_create_hurtbox(attack_origin, 0, controller.facing_x * 24, 13, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*2, -4);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 2:
-			instance_create_hurtbox(attack_origin, 1, controller.facing_x * 26, 12, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			sprite_subdex = 4;
+			instance_create_hurtbox(attack_origin, 1, controller.facing_x * 16, 16, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, base_knockback);
 			velocity_x += controller.facing_x * move_speed * 10;
 		break;
 		case 3:
-			instance_create_hurtbox(attack_origin, 2, controller.facing_x * 16, 26, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			var attack_box = instance_create_hurtbox(attack_origin, 2, controller.facing_x * 16, 26, cancel_buffer, id, obj_enemy, base_damage, controller.facing_x*base_knockback, -base_knockback/2);
+			attack_box.callback = function() {
+				velocity = -jump_boost/2;
+				state_machine.state_change(1, 1);
+			}
 			velocity_y -= jump_boost;
 		break;
 	}
@@ -129,9 +163,13 @@ default_squish_action = function(){
 #region //states
 	//0
 	function state_run(){
+		sprite_subdex = 6;
+		
 		velocity_x = lerp(velocity_x, 0, drag);	
 		var input_x = move_speed * controller.input_normal_x;
 		velocity_x += input_x;
+		
+		if (velocity_x != 0) sprite_subdex = 8;
 		
 		//jump button
 		if (controller.input_jump_pressed) {
@@ -172,8 +210,9 @@ default_squish_action = function(){
 	function state_jump(){
 		switch (state_machine.substate) {
 			//going up
-			case 0:
+			case 0:		
 				if (state_machine.state_timer < 1) {
+					sprite_subdex = 7;
 					velocity_y = -jump_boost;
 				}
 				if (controller.input_jump_released or state_machine.state_timer == jump_max){
@@ -190,7 +229,11 @@ default_squish_action = function(){
 			
 			//peak
 			case 1:
+				if (state_machine.state_timer < 1) {
+					sprite_subdex = 7;
+				}
 				if (state_machine.state_timer == jump_max+peak_time) {
+					
 					state_machine.substate = 2;
 				}
 				if (is_standing()) state_machine.state_change(0);
@@ -206,6 +249,7 @@ default_squish_action = function(){
 			
 			//landing
 			case 2:
+				sprite_subdex = 1;
 				if (is_standing() or is_riding(obj_solid)){
 					coyote_frames = coyote_max;
 					state_machine.state_change(0);
@@ -218,6 +262,10 @@ default_squish_action = function(){
 				var input_x = move_speed * controller.input_normal_x;
 				velocity_x += input_x;	
 			break;
+		}
+		
+		if (controller.input_a_pressed) {
+			state_machine.state_change(5);
 		}
 		
 		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
@@ -292,7 +340,25 @@ default_squish_action = function(){
 		}
 		i_frames_counter = 2;
 	}
+	//5
+	function state_air_attack(){
+		sprite_subdex = 0;
+		
+		velocity_x = lerp(velocity_x, 0, drag/4);			
+		velocity_y += grav;
+		
+		if (state_machine.state_timer < 2) attack(3);
+		else if (state_machine.state_timer > input_window) state_machine.state_change(3, 2);
+		else if (is_standing()) state_machine.state_change(0);
+		
+		//apply velocity
+		velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
+		velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
+		
+		move_x(velocity_x, cancel_velocity_x);
+		move_y(velocity_y, cancel_velocity_y);
+	}
 #endregion
 
-state_machine = new StateMachine([state_run, state_jump, state_respawn, state_ground_attack, state_die], id);
+state_machine = new StateMachine([state_run, state_jump, state_respawn, state_ground_attack, state_die, state_air_attack], id);
 state_machine.state_change(0);

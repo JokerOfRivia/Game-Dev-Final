@@ -1,8 +1,8 @@
 event_inherited();
 
 #region //sprites
-sprite_right = 
-sprite_left = 
+sprite_right = spr_sniper_left;
+sprite_left = spr_sniper_right;
 #endregion
 
 #region //gameplay values
@@ -46,7 +46,7 @@ take_knockback = function(knockback_x, knockback_y){
 
 attack = function(angle) {
 	var center_x = (x + sprite_width/2);
-	var center_y = (y + sprite_height/2) - 4;
+	var center_y = (y + sprite_height/2) - 6;
 	
 	instance_create_bullet(center_x, center_y, angle, bullet_speed, 1, target, bullet_damage, bullet_knockback);
 }
@@ -67,12 +67,24 @@ chase = function() {
 		
 		var angle = point_direction(center_x, center_y, target_center_x, target_center_y);
 		
+		facing_x = sign(target_center_x - center_x);
+		
 		if (!collision_line(center_x, center_y, target_center_x, target_center_y, obj_solid, false, false)) {
 			if ((state_machine.state_timer mod reload_time == 0) or state_machine.state_timer == reload_time/10) {
 				attack(angle);
 			}
 		}
 		else state_machine.state_change(2);
+	}
+}
+take_damage = function(amount){
+	if (i_frames_counter < 1) {
+		obj_camera.do_screenshake(10,1);
+		hp = clamp(hp-1, 0, hp_max);
+		if (hp==0){
+			state_machine.state_change(3);
+		}
+		i_frames_counter = i_frames;
 	}
 }
 
@@ -140,6 +152,10 @@ function state_chase(){
 
 //3
 function state_die(){
+	var drop = instance_create_layer(x, y, layer, obj_health_pickup);
+	drop.velocity_x = velocity_x;
+	drop.velocity_y = velocity_y;
+	
 	instance_destroy();
 	
 	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);

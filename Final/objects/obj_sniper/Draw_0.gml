@@ -1,4 +1,4 @@
-event_inherited();
+
 if (state_machine.state == 1) {
 	var target_center_x = (target.x + target.sprite_width/2);
 	var center_x = (x + sprite_width/2);
@@ -16,3 +16,19 @@ if (state_machine.state == 1) {
 		draw_text(x, y+12, object_get_name(target));
 	}
 }
+if (i_frames_counter > 0){
+	shader_set(shd_flash);
+}
+switch (facing_x) {
+	case -1:
+		sprite_index = spr_sniper_left;
+	break;
+	case 1:
+		sprite_index = spr_sniper_right;
+	break;
+	default:
+		sprite_index = spr_sniper_right;
+	break;
+}
+draw_self();
+shader_reset();

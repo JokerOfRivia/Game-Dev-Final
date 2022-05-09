@@ -23,6 +23,16 @@ chase = function(){
 	}
 } 
 
+#region //sprites
+spr_explode_left = spr_zombie_explode_left;
+spr_walk_left = spr_zombie_walk_left;
+spr_idle_left = spr_zombie_idle_left;
+
+spr_explode_right = spr_zombie_explode_right;
+spr_walk_right = spr_zombie_walk_right;
+spr_idle_right = spr_zombie_idle_right;
+#endregion
+
 #region //gameplay values
 hp_max = 1;
 hp = hp_max;
@@ -103,6 +113,10 @@ function state_chase(){
 
 //2
 function state_die(){
+	var drop = instance_create_layer(x, y, layer, obj_health_pickup);
+	drop.velocity_x = velocity_x;
+	drop.velocity_y = velocity_y;
+	
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	if (state_machine.state_timer > explode_timer) {

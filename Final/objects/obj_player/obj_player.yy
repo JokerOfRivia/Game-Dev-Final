@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "spr_debug_green",
-    "path": "sprites/spr_debug_green/spr_debug_green.yy",
+    "name": "spr_player_idle_right",
+    "path": "sprites/spr_player_idle_right/spr_player_idle_right.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_player",
+    "path": "sprites/spr_player/spr_player.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "obj_actor",

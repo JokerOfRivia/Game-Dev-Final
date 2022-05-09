@@ -10,6 +10,9 @@ switch (room) {
 		stop_music();
 		set_music(ost_antarctic);
 	break;
+	case rm_2:
+		stop_music();
+		set_music(ost_alcoholmarker);
 }
 
 

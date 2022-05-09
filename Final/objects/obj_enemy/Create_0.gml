@@ -31,6 +31,7 @@ function cancel_velocity_x(){
 function cancel_velocity_y(){
 	velocity_y = 0;
 }
+default_squish_action = instance_destroy;
 
 #region //ai
 	target = noone;

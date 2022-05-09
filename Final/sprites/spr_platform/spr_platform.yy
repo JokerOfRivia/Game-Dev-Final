@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/Final/UI.yy",
+    "name": "Terrain",
+    "path": "folders/Sprites/Final/Terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_platform",

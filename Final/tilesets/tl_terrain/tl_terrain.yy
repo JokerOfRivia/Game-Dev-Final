@@ -74,8 +74,8 @@
     "TileSerialiseData": [],
   },
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/Final/UI.yy",
+    "name": "Tilesets",
+    "path": "folders/Tilesets.yy",
   },
   "resourceVersion": "1.0",
   "name": "tl_terrain",

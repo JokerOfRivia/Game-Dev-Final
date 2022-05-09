@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_sniper",
-    "path": "sprites/spr_sniper/spr_sniper.yy",
+    "name": "spr_sniper_right",
+    "path": "sprites/spr_sniper_right/spr_sniper_right.yy",
   },
   "solid": false,
   "visible": true,

@@ -6,6 +6,7 @@ local_x = 0;
 local_y = 0;
 knockback_x = 0;
 knockback_y = 0;
+callback = function(){};
 
 if (debug_mode){
 	visible = true;
@@ -32,7 +33,7 @@ function init(local_x, local_y, width, height, time, parent, target, damage, kno
 }
 
 function step(){
-	if ((!instance_exists(object) and object!=noone) or time < 1){
+	if ((!instance_exists(object) and object!=noone) or (time < 1 and time > -99)){
 		instance_destroy();
 		exit;
 	}
@@ -57,6 +58,7 @@ function step(){
 					hit_actor.take_knockback(knockback_x, knockback_y);
 				}
 				if (variable_instance_exists(hit_actor, "take_damage")) hit_actor.take_damage(damage);
+				callback();
 			}
 		}
 		ds_list_destroy(hit_list);
