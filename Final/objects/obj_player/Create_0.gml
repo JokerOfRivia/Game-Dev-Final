@@ -80,6 +80,7 @@ i_frames_counter = -1;
 function take_damage(amount){
 	if (i_frames_counter < 1 and state_machine.state!=4) {
 		obj_camera.do_screenshake(5, amount);
+		obj_sound.play_sfx(sfx_playerhit);
 		
 		hp = clamp(hp-amount, 0, hp_max);
 		

@@ -54,7 +54,7 @@ take_damage = function(amount){
 		i_frames_counter = i_frames;
 		obj_camera.do_screenshake(12, amount);
 		hp -= amount;
-		if (hp < 1) state_machine.state_change(4);
+		if (hp < 1) state_machine.state_change(2);
 	}
 }
 attack = function(version){

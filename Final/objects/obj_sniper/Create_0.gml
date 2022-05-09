@@ -80,6 +80,7 @@ chase = function() {
 take_damage = function(amount){
 	if (i_frames_counter < 1) {
 		obj_camera.do_screenshake(10,1);
+		obj_sound.play_sfx(sfx_hit);
 		hp = clamp(hp-1, 0, hp_max);
 		if (hp==0){
 			state_machine.state_change(3);

@@ -37,6 +37,7 @@ hurtbox = instance_create_hurtbox(x-2, y+8, sprite_width+2, sprite_height-8, -10
 take_damage = function(amount){
 	if (i_frames_counter < 1){
 		obj_camera.do_screenshake(6, amount);
+		obj_sound.play_sfx(sfx_hit);
 		hp -= amount;
 	}
 	if (hp < 1) state_machine.state_change(1);
@@ -72,24 +73,6 @@ function state_move(){
 	velocity_y += grav;
 	
 	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);	
-	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
-	
-	move_x(velocity_x, cancel_velocity_x);
-	move_y(velocity_y, cancel_velocity_y);
-}
-
-//2
-function state_die(){
-	velocity_x = lerp(velocity_x, 0, drag);	
-	
-	chase();
-	
-	//count down i frames from hit
-	i_frames_counter = (i_frames_counter > 0 )? i_frames_counter-1 : 0;
-	
-	velocity_y += grav;
-	
-	velocity_x = clamp(velocity_x, -velocity_max, velocity_max);
 	velocity_y = clamp(velocity_y, -velocity_max, velocity_max);
 	
 	move_x(velocity_x, cancel_velocity_x);

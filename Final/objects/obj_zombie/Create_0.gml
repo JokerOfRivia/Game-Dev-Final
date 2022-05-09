@@ -1,5 +1,13 @@
 event_inherited();
 
+take_damage = function(amount){
+	if (i_frames_counter < 1){
+		obj_camera.do_screenshake(6, amount);
+		obj_sound.play_sfx(sfx_hit);
+		hp -= amount;
+		if(hp==0) state_machine.state_change(2);
+	}
+}
 take_knockback = function(knockback_x, knockback_y){
 	if (i_frames_counter < 1) {
 		velocity_x+=knockback_x;
@@ -112,14 +120,13 @@ function state_chase(){
 }
 
 //2
-function state_die(){
-	var drop = instance_create_layer(x, y, layer, obj_health_pickup);
-	drop.velocity_x = velocity_x;
-	drop.velocity_y = velocity_y;
-	
+function state_die(){	
 	velocity_x = lerp(velocity_x, 0, drag);	
 	
 	if (state_machine.state_timer > explode_timer) {
+		var drop = instance_create_layer(x, y, layer, obj_health_pickup);
+		drop.velocity_x = velocity_x;
+		drop.velocity_y = velocity_y;
 		instance_create_explosion(x+sprite_width/2, y+sprite_height+2, explode_radius, 30, obj_actor, 2, 10);
 		instance_destroy();
 	}
